@@ -1,6 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "@tailwindcss/typography";
+
+@theme {
+  --color-green-600: #16a34a;
+  /* eventuele custom tokens hier */
+}
 
 :root {
   --background: #ffffff;
