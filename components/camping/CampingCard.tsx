@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { urlFor } from '@/sanity/lib/image'
+import { landToSlug } from '@/lib/utils'
 import { EVQuickStats } from './EVQuickStats'
 import type { AllCampingsQueryResult } from '@/sanity.types'
 
@@ -9,7 +10,7 @@ type Camping = AllCampingsQueryResult[number]
 export function CampingCard({ camping }: { camping: Camping }) {
     return (
         <Link
-            href={`/campings/${camping.slug?.current}`}
+            href={`/campings/${camping.land ? landToSlug(camping.land) : 'overig'}/${camping.slug?.current}`}
             className="group flex flex-col rounded-xl border bg-white shadow-sm transition hover:shadow-md"
         >
             {/* Foto */}

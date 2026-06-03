@@ -40,21 +40,33 @@ export const campingBySlugQuery = defineQuery(`
 `)
 
 export const allCampingSlugsQuery = defineQuery(`
-  *[_type == "camping"]{ "slug": slug.current }
+  *[_type == "camping"]{
+    "slug": slug.current,
+    "land": land
+  }
 `)
 
-// Gefilterd op land — voor regiopagina's
+export const allLandenQuery = defineQuery(`
+  *[_type == "camping" && defined(land)] {
+    "land": land
+  }
+`)
+
 export const campingsByLandQuery = defineQuery(`
   *[_type == "camping" && land == $land] | order(naam asc) {
     _id,
     naam,
     slug,
     locatie,
+    land,
     regio,
     affiliate_link,
     "thumbnail": afbeeldingen[0],
     aantal_laders,
     laadsnelheid,
-    laden_bij_tent
-    }
+    netwerk,
+    laden_bij_tent,
+    snellader_in_buurt,
+    ev_geverifieerd_op
+  }
 `)
