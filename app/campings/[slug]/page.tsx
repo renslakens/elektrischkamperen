@@ -44,70 +44,99 @@ export default async function CampingDetailPage({ params }: Props) {
     return (
         <main className="mx-auto max-w-4xl px-4 py-10">
 
+            {/* Breadcrumb */}
+            <nav className="mb-4 text-sm text-gray-500">
+                <span>
+                    <a href="/campings" className="hover:text-green-700 hover:underline">
+                        Campings
+                    </a>
+                    {camping.land && (
+                        <>
+                            <span className="mx-2 text-gray-300">/</span>
+                            <span className="text-gray-600">{camping.land}</span>
+                        </>
+                    )}
+                </span>
+            </nav>
+
             {/* Header */}
             <div className="mb-6">
                 {camping.regio && (
-                    <p className="mb-1 text-sm font-medium uppercase tracking-wide text-gray-500">
+                    <p className="mb-1 text-sm font-medium text-gray-500">
                         {camping.land} — {camping.regio}
                     </p>
                 )}
-                <h1 className="text-3xl font-bold text-gray-900">{camping.naam}</h1>
+                <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+                    {camping.naam}
+                </h1>
             </div>
 
             {/* Foto's */}
-            {afbeeldingen.length > 0 && (
+            {(camping.afbeeldingen?.length ?? 0) > 0 && (
                 <div className="mb-8">
-                    <CampingImageGallery afbeeldingen={afbeeldingen} />
+                    <CampingImageGallery afbeeldingen={camping.afbeeldingen!} />
                 </div>
             )}
 
             <div className="grid gap-8 lg:grid-cols-3">
 
                 {/* Hoofdkolom */}
-                <div className="lg:col-span-2 space-y-8">
+                <div className="space-y-6 lg:col-span-2">
 
-                    {/* EV-laadinfo — jouw USP */}
+                    {/* EV-laadinfo */}
                     <EVQuickStats
-                        aantal_laders={camping.aantal_laders}
-                        laadsnelheid={camping.laadsnelheid}
-                        netwerk={camping.netwerk}
-                        laden_bij_tent={camping.laden_bij_tent}
-                        snellader_in_buurt={camping.snellader_in_buurt}
+                        aantal_laders={camping.aantal_laders ?? null}
+                        laadsnelheid={camping.laadsnelheid ?? null}
+                        netwerk={camping.netwerk ?? null}
+                        laden_bij_tent={camping.laden_bij_tent ?? null}
+                        snellader_in_buurt={camping.snellader_in_buurt ?? null}
+                        variant="full"
                     />
 
-                    {/* Extra notitie */}
+                    {/* Redactionele notitie */}
                     {camping.ev_notitie && (
-                        <div className="rounded-lg bg-gray-50 p-4 text-sm text-gray-700">
-                            <p className="mb-1 font-medium text-gray-900">Redactionele noot</p>
-                            <p>{camping.ev_notitie}</p>
+                        <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
+                            <p className="mb-2 text-sm font-semibold text-gray-700">
+                                Redactionele noot
+                            </p>
+                            <p className="text-sm leading-relaxed text-gray-700">
+                                {camping.ev_notitie}
+                            </p>
                         </div>
                     )}
 
                     {/* Verificatiedatum */}
                     {camping.ev_geverifieerd_op && (
-                        <p className="text-xs text-gray-400">
+                        <p className="text-xs text-gray-500">
                             Laadinfo geverifieerd op{' '}
                             {new Date(camping.ev_geverifieerd_op).toLocaleDateString('nl-NL', {
-                                day: 'numeric', month: 'long', year: 'numeric',
+                                day: 'numeric',
+                                month: 'long',
+                                year: 'numeric',
                             })}
                         </p>
                     )}
                 </div>
 
-                {/* Sidebar — sticky affiliate blok */}
+                {/* Sidebar */}
                 <aside className="space-y-4 lg:sticky lg:top-8 lg:self-start">
-                    <div className="rounded-xl border p-6 shadow-sm">
-                        <p className="mb-1 text-sm text-gray-500">Prijzen & beschikbaarheid</p>
-                        <p className="mb-4 text-xl font-bold text-gray-900">{camping.naam}</p>
+                    <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                        <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                            Prijzen & beschikbaarheid
+                        </p>
+                        <p className="mb-4 text-lg font-bold text-gray-900">{camping.naam}</p>
                         {camping.affiliate_link ? (
                             <>
-                                <AffiliateButton href={camping.affiliate_link} campingNaam={camping.naam} />
-                                <p className="mt-3 text-center text-xs text-gray-400">
+                                <AffiliateButton
+                                    href={camping.affiliate_link}
+                                    campingNaam={camping.naam}
+                                />
+                                <p className="mt-3 text-center text-xs text-gray-500">
                                     Je verlaat de site via een affiliate link
                                 </p>
                             </>
                         ) : (
-                            <p className="rounded-lg bg-gray-50 p-3 text-center text-sm text-gray-500">
+                            <p className="rounded-lg bg-gray-50 p-3 text-center text-sm text-gray-600">
                                 Boekingslink volgt binnenkort
                             </p>
                         )}
