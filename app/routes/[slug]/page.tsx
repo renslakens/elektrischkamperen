@@ -7,6 +7,7 @@ import { maakMetadata } from '@/lib/metadata'
 import { EtappeBlok } from '@/components/route/EtappeBlok'
 import { urlFor } from '@/sanity/lib/image'
 import { client } from '../../../sanity/lib/client'
+import { breadcrumbJsonLd, JsonLd } from '@/lib/structured-data'
 import type { RouteBySlugQueryResult } from '@/sanity.types'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -46,78 +47,84 @@ export default async function RouteDetailPage({ params }: Props) {
     if (!route) notFound()
 
     return (
-        <main className="mx-auto max-w-3xl px-4 py-10">
+        <>
+            <JsonLd data={breadcrumbJsonLd([
+                { naam: 'Routes', href: '/routes' },
+                { naam: route.titel ?? '', href: `/routes/${slug}` },
+            ])} />
+            <main className="mx-auto max-w-3xl px-4 py-10">
 
-            {/* Header */}
-            <div className="mb-6">
-                {(route.landen?.length ?? 0) > 0 && (
-                    <p className="mb-1 text-sm font-medium uppercase tracking-wide text-gray-400">
-                        {route.landen?.join(' · ')}
-                    </p>
-                )}
-                <h1 className="text-3xl font-bold text-gray-900">{route.titel}</h1>
-
-                {/* Route stats */}
-                <div className="mt-3 flex flex-wrap gap-3">
-                    {route.totale_km && (
-                        <span className="rounded-full bg-gray-100 px-4 py-1.5 text-sm text-gray-600">
-                            {route.totale_km} km totaal
-                        </span>
+                {/* Header */}
+                <div className="mb-6">
+                    {(route.landen?.length ?? 0) > 0 && (
+                        <p className="mb-1 text-sm font-medium uppercase tracking-wide text-gray-400">
+                            {route.landen?.join(' · ')}
+                        </p>
                     )}
-                    {(route.etappes?.length ?? 0) > 0 && (
-                        <span className="rounded-full bg-gray-100 px-4 py-1.5 text-sm text-gray-600">
-                            {route.etappes?.length} etappe{route.etappes?.length !== 1 ? 's' : ''}
-                        </span>
-                    )}
-                    {route.caravan_geschikt && (
-                        <span className="rounded-full bg-amber-100 px-4 py-1.5 text-sm text-amber-700">
-                            🚐 Caravan geschikt
-                        </span>
-                    )}
-                </div>
-            </div>
+                    <h1 className="text-3xl font-bold text-gray-900">{route.titel}</h1>
 
-            {/* Hero */}
-            {route.thumbnail?.asset && (
-                <div className="relative mb-8 h-64 w-full overflow-hidden rounded-xl sm:h-80">
-                    <Image
-                        src={urlFor(route.thumbnail).width(900).height(400).url()}
-                        alt={route.titel ?? ''}
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                </div>
-            )}
-
-            {/* Beschrijving */}
-            {route.beschrijving && (
-                <div className="prose prose-gray mb-10 max-w-none">
-                    {route.beschrijving
-                        .filter((b): b is typeof b & { _type: 'block' } => b._type === 'block')
-                        .map((block, i) => (
-                            <p key={i}>
-                                {block.children
-                                    ?.filter((c): c is typeof c & { text: string } => 'text' in c)
-                                    .map((c) => c.text)
-                                    .join('')}
-                            </p>
-                        ))}
-                </div>
-            )}
-
-            {/* Etappes */}
-            {route.etappes && route.etappes.length > 0 && (
-                <section>
-                    <h2 className="mb-6 text-2xl font-bold text-gray-900">De route</h2>
-                    <div className="space-y-10">
-                        {route.etappes.map((etappe, i) => (
-                            <EtappeBlok key={etappe._id} etappe={etappe} index={i} />
-                        ))}
+                    {/* Route stats */}
+                    <div className="mt-3 flex flex-wrap gap-3">
+                        {route.totale_km && (
+                            <span className="rounded-full bg-gray-100 px-4 py-1.5 text-sm text-gray-600">
+                                {route.totale_km} km totaal
+                            </span>
+                        )}
+                        {(route.etappes?.length ?? 0) > 0 && (
+                            <span className="rounded-full bg-gray-100 px-4 py-1.5 text-sm text-gray-600">
+                                {route.etappes?.length} etappe{route.etappes?.length !== 1 ? 's' : ''}
+                            </span>
+                        )}
+                        {route.caravan_geschikt && (
+                            <span className="rounded-full bg-amber-100 px-4 py-1.5 text-sm text-amber-700">
+                                🚐 Caravan geschikt
+                            </span>
+                        )}
                     </div>
-                </section>
-            )}
+                </div>
 
-        </main>
+                {/* Hero */}
+                {route.thumbnail?.asset && (
+                    <div className="relative mb-8 h-64 w-full overflow-hidden rounded-xl sm:h-80">
+                        <Image
+                            src={urlFor(route.thumbnail).width(900).height(400).url()}
+                            alt={route.titel ?? ''}
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                    </div>
+                )}
+
+                {/* Beschrijving */}
+                {route.beschrijving && (
+                    <div className="prose prose-gray mb-10 max-w-none">
+                        {route.beschrijving
+                            .filter((b): b is typeof b & { _type: 'block' } => b._type === 'block')
+                            .map((block, i) => (
+                                <p key={i}>
+                                    {block.children
+                                        ?.filter((c): c is typeof c & { text: string } => 'text' in c)
+                                        .map((c) => c.text)
+                                        .join('')}
+                                </p>
+                            ))}
+                    </div>
+                )}
+
+                {/* Etappes */}
+                {route.etappes && route.etappes.length > 0 && (
+                    <section>
+                        <h2 className="mb-6 text-2xl font-bold text-gray-900">De route</h2>
+                        <div className="space-y-10">
+                            {route.etappes.map((etappe, i) => (
+                                <EtappeBlok key={etappe._id} etappe={etappe} index={i} />
+                            ))}
+                        </div>
+                    </section>
+                )}
+
+            </main>
+        </>
     )
 }
