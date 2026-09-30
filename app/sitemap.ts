@@ -41,19 +41,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             url: `${SITE_URL}/campings`,
             lastModified: new Date(),
             changeFrequency: 'daily',
-            priority: 0.9,
+            priority: 0.85,
         },
         {
             url: `${SITE_URL}/routes`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
-            priority: 0.8,
+            priority: 0.7,
         },
         {
             url: `${SITE_URL}/gidsen`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
-            priority: 0.8,
+            priority: 0.7,
+        },
+        {
+            url: `${SITE_URL}/over-ons`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.3,
         },
     ]
 

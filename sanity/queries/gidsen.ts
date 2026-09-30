@@ -37,6 +37,7 @@ export const gidsBySlugQuery = defineQuery(`
             camping-> {
             naam,
             slug,
+            land,
             affiliate_link,
             afbeeldingen,
             aantal_laders,

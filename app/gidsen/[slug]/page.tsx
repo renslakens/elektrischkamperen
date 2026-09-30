@@ -63,7 +63,7 @@ export default async function GidsDetailPage({ params }: Props) {
                 gepubliceerdOp: gids.gepubliceerd_op ?? null,
             })} />
 
-            <main>
+            <main className="mx-auto max-w-3xl px-4 py-10">
 
                 {/* Header */}
                 <div className="mb-6">

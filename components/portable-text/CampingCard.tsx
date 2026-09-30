@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import type { PortableTextComponentProps } from '@portabletext/react'
 import { urlFor } from '@/sanity/lib/image'
+import { landToSlug } from '@/lib/utils'
 import { EVQuickStats } from '@/components/camping/EVQuickStats'
 import type { GidsBySlugQueryResult } from '@/sanity.types'
 
@@ -59,7 +60,7 @@ export function CampingCard({ value }: PortableTextComponentProps<CampingCardVal
                         </a>
                     )}
                     <Link
-                        href={`/campings/${camping.slug?.current}`}
+                        href={`/campings/${camping.land ? landToSlug(camping.land) : 'overig'}/${camping.slug?.current}`}
                         className="rounded-xl border px-6 py-3 text-center text-sm font-medium text-gray-600 transition hover:border-green-500 hover:text-green-700"
                     >
                         Meer info
