@@ -26,12 +26,7 @@ export type Laadpaal = {
   locatie?: Geopoint;
   max_kw?: number;
   netwerk?:
-    | "Fastned"
-    | "Ionity"
-    | "Allego"
-    | "Shell Recharge"
-    | "Tesla"
-    | "Overig";
+    "Fastned" | "Ionity" | "Allego" | "Shell Recharge" | "Tesla" | "Overig";
   connector_types?: Array<string>;
   notitie?: string;
 };
@@ -422,9 +417,20 @@ export type AllSanitySchemaTypes =
 
 // Source: app/sitemap.ts
 // Variable: campingSlugsQuery
-// Query: *[_type == "camping"]{ "slug": slug.current, _updatedAt }
+// Query: *[_type == "camping"]{ "slug": slug.current, "land": land, _updatedAt }
 export type CampingSlugsQueryResult = Array<{
   slug: string | null;
+  land:
+    | "Belgi\xEB"
+    | "Duitsland"
+    | "Frankrijk"
+    | "Itali\xEB"
+    | "Kroati\xEB"
+    | "Nederland"
+    | "Oostenrijk"
+    | "Spanje"
+    | "Zwitserland"
+    | null;
   _updatedAt: string;
 }>;
 
@@ -442,6 +448,22 @@ export type RouteSlugsQueryResult = Array<{
 export type GidsSlugsQueryResult = Array<{
   slug: string | null;
   _updatedAt: string;
+}>;
+
+// Source: app/sitemap.ts
+// Variable: landenQuery
+// Query: *[_type == "camping" && defined(land)]{ "land": land }
+export type LandenQueryResult = Array<{
+  land:
+    | "Belgi\xEB"
+    | "Duitsland"
+    | "Frankrijk"
+    | "Itali\xEB"
+    | "Kroati\xEB"
+    | "Nederland"
+    | "Oostenrijk"
+    | "Spanje"
+    | "Zwitserland";
 }>;
 
 // Source: sanity/queries/campings.ts
@@ -632,7 +654,7 @@ export type AllGidsenQueryResult = Array<{
 
 // Source: sanity/queries/gidsen.ts
 // Variable: gidsBySlugQuery
-// Query: *[_type == "gids" && slug.current == $slug][0] {    _id,    titel,    slug,    hook,    hero_image,    land,    geschikt_voor,    gepubliceerd_op,    seo_titel,    seo_beschrijving,    focus_keyword,    body[] {        ...,        // Resolve camping references in campingCard blokken        _type == "campingCard" => {            ...,            camping-> {            naam,            slug,            affiliate_link,            afbeeldingen,            aantal_laders,            laadsnelheid,            netwerk,            laden_bij_tent,            snellader_in_buurt            }        },        // Resolve camping references in etappeBlokken        _type == "etappeBlok" => {                ...,                campings[]-> {                _id,                naam,                slug,                "thumbnail": afbeeldingen[0],                aantal_laders,                laadsnelheid,                netwerk,                laden_bij_tent                }            }        }    }
+// Query: *[_type == "gids" && slug.current == $slug][0] {    _id,    titel,    slug,    hook,    hero_image,    land,    geschikt_voor,    gepubliceerd_op,    seo_titel,    seo_beschrijving,    focus_keyword,    body[] {        ...,        // Resolve camping references in campingCard blokken        _type == "campingCard" => {            ...,            camping-> {            naam,            slug,            land,            affiliate_link,            afbeeldingen,            aantal_laders,            laadsnelheid,            netwerk,            laden_bij_tent,            snellader_in_buurt            }        },        // Resolve camping references in etappeBlokken        _type == "etappeBlok" => {                ...,                campings[]-> {                _id,                naam,                slug,                "thumbnail": afbeeldingen[0],                aantal_laders,                laadsnelheid,                netwerk,                laden_bij_tent                }            }        }    }
 export type GidsBySlugQueryResult = {
   _id: string;
   titel: string | null;
@@ -675,6 +697,17 @@ export type GidsBySlugQueryResult = {
         camping: {
           naam: string | null;
           slug: Slug | null;
+          land:
+            | "Belgi\xEB"
+            | "Duitsland"
+            | "Frankrijk"
+            | "Itali\xEB"
+            | "Kroati\xEB"
+            | "Nederland"
+            | "Oostenrijk"
+            | "Spanje"
+            | "Zwitserland"
+            | null;
           affiliate_link: string | null;
           afbeeldingen: Array<{
             asset?: SanityImageAssetReference;
@@ -961,19 +994,19 @@ export type AllRouteSlugsQueryResult = Array<{
 }>;
 
 // Query TypeMap
-import "@sanity/client";
-declare module "@sanity/client" {
+declare global {
   interface SanityQueries {
-    '*[_type == "camping"]{ "slug": slug.current, _updatedAt }': CampingSlugsQueryResult;
-    '*[_type == "route"]{ "slug": slug.current, _updatedAt }': RouteSlugsQueryResult;
-    '*[_type == "gids"]{ "slug": slug.current, _updatedAt }': GidsSlugsQueryResult;
+    '\n  *[_type == "camping"]{ "slug": slug.current, "land": land, _updatedAt }\n': CampingSlugsQueryResult;
+    '\n  *[_type == "route"]{ "slug": slug.current, _updatedAt }\n': RouteSlugsQueryResult;
+    '\n  *[_type == "gids"]{ "slug": slug.current, _updatedAt }\n': GidsSlugsQueryResult;
+    '\n  *[_type == "camping" && defined(land)]{ "land": land }\n': LandenQueryResult;
     '\n  *[_type == "camping"] | order(naam asc) {\n    _id,\n    naam,\n    slug,\n    locatie,\n    land,\n    regio,\n    affiliate_link,\n    "thumbnail": afbeeldingen[0],\n    aantal_laders,\n    laadsnelheid,\n    netwerk,\n    laden_bij_tent,\n    snellader_in_buurt,\n    ev_geverifieerd_op\n    }\n': AllCampingsQueryResult;
     '\n  *[_type == "camping" && slug.current == $slug][0] {\n    _id,\n    naam,\n    slug,\n    locatie,\n    land,\n    regio,\n    affiliate_link,\n    afbeeldingen,\n    aantal_laders,\n    laadsnelheid,\n    netwerk,\n    laden_bij_tent,\n    snellader_in_buurt,\n    ev_notitie,\n    ev_geverifieerd_op\n    }\n': CampingBySlugQueryResult;
     '\n  *[_type == "camping"]{\n    "slug": slug.current,\n    "land": land\n  }\n': AllCampingSlugsQueryResult;
     '\n  *[_type == "camping" && defined(land)] {\n    "land": land\n  }\n': AllLandenQueryResult;
     '\n  *[_type == "camping" && land == $land] | order(naam asc) {\n    _id,\n    naam,\n    slug,\n    locatie,\n    land,\n    regio,\n    affiliate_link,\n    "thumbnail": afbeeldingen[0],\n    aantal_laders,\n    laadsnelheid,\n    netwerk,\n    laden_bij_tent,\n    snellader_in_buurt,\n    ev_geverifieerd_op\n  }\n': CampingsByLandQueryResult;
     '\n  *[_type == "gids"] | order(gepubliceerd_op desc) {\n    _id,\n    titel,\n    slug,\n    hook,\n    hero_image,\n    land,\n    geschikt_voor,\n    gepubliceerd_op,\n    focus_keyword,\n    // Tel het aantal camping cards in de body\n    "aantal_campings": count(body[_type == "campingCard"])\n    }\n': AllGidsenQueryResult;
-    '\n  *[_type == "gids" && slug.current == $slug][0] {\n    _id,\n    titel,\n    slug,\n    hook,\n    hero_image,\n    land,\n    geschikt_voor,\n    gepubliceerd_op,\n    seo_titel,\n    seo_beschrijving,\n    focus_keyword,\n    body[] {\n        ...,\n        // Resolve camping references in campingCard blokken\n        _type == "campingCard" => {\n            ...,\n            camping-> {\n            naam,\n            slug,\n            affiliate_link,\n            afbeeldingen,\n            aantal_laders,\n            laadsnelheid,\n            netwerk,\n            laden_bij_tent,\n            snellader_in_buurt\n            }\n        },\n        // Resolve camping references in etappeBlokken\n        _type == "etappeBlok" => {\n                ...,\n                campings[]-> {\n                _id,\n                naam,\n                slug,\n                "thumbnail": afbeeldingen[0],\n                aantal_laders,\n                laadsnelheid,\n                netwerk,\n                laden_bij_tent\n                }\n            }\n        }\n    }\n': GidsBySlugQueryResult;
+    '\n  *[_type == "gids" && slug.current == $slug][0] {\n    _id,\n    titel,\n    slug,\n    hook,\n    hero_image,\n    land,\n    geschikt_voor,\n    gepubliceerd_op,\n    seo_titel,\n    seo_beschrijving,\n    focus_keyword,\n    body[] {\n        ...,\n        // Resolve camping references in campingCard blokken\n        _type == "campingCard" => {\n            ...,\n            camping-> {\n            naam,\n            slug,\n            land,\n            affiliate_link,\n            afbeeldingen,\n            aantal_laders,\n            laadsnelheid,\n            netwerk,\n            laden_bij_tent,\n            snellader_in_buurt\n            }\n        },\n        // Resolve camping references in etappeBlokken\n        _type == "etappeBlok" => {\n                ...,\n                campings[]-> {\n                _id,\n                naam,\n                slug,\n                "thumbnail": afbeeldingen[0],\n                aantal_laders,\n                laadsnelheid,\n                netwerk,\n                laden_bij_tent\n                }\n            }\n        }\n    }\n': GidsBySlugQueryResult;
     '\n  *[_type == "gids"]{ "slug": slug.current }\n': AllGidsSlugsQueryResult;
     '\n  *[_type == "route" && featured == true] | order(_updatedAt desc) [0...3] {\n    _id,\n    titel,\n    slug,\n    totale_km,\n    caravan_geschikt,\n    landen,\n    thumbnail,\n    seo_beschrijving,\n    "aantalEtappes": count(etappes),\n    "heeftLaadpaal": count(etappes[]->campings[]->[laadpaal_aanwezig == true]) > 0\n    }\n': FeaturedRoutesQueryResult;
     '\n  *[_type == "camping" && featured == true] | order(_updatedAt desc) [0...6] {\n    _id,\n    naam,\n    slug,\n    locatie,\n    land,\n    regio,\n    affiliate_link,\n    "thumbnail": afbeeldingen[0],\n    aantal_laders,\n    laadsnelheid,\n    netwerk,\n    laden_bij_tent,\n    snellader_in_buurt,\n    ev_geverifieerd_op\n    }\n': FeaturedCampingsQueryResult;
@@ -981,4 +1014,8 @@ declare module "@sanity/client" {
     '\n  *[_type == "route" && slug.current == $slug][0] {\n    _id,\n    titel,\n    slug,\n    beschrijving,\n    totale_km,\n    caravan_geschikt,\n    landen,\n    thumbnail,\n    seo_titel,\n    seo_beschrijving,\n    "etappes": etappes[]-> {\n        _id,\n        naam,\n        slug,\n        afstand_km,\n        hoogteverschil_m,\n        extra_verbruik_procent,\n        rijdtips,\n        polyline,\n        "campings": campings[]-> {\n            _id,\n            naam,\n            slug,\n            locatie,\n            "thumbnail": afbeeldingen[0],\n            aantal_laders,\n            laadsnelheid,\n            netwerk,\n            laden_bij_tent,\n            snellader_in_buurt\n        },\n        "laadpalen": laadpalen[]-> {\n            _id,\n            naam,\n            locatie,\n            max_kw,\n            netwerk,\n            connector_types\n        }\n    }\n}\n': RouteBySlugQueryResult;
     '\n  *[_type == "route"]{ "slug": slug.current }\n': AllRouteSlugsQueryResult;
   }
+}
+// Lets @sanity/client releases that predate the global registry read it too
+declare module "@sanity/client" {
+  interface SanityQueries extends globalThis.SanityQueries {}
 }

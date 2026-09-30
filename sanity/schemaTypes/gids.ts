@@ -49,6 +49,10 @@ export default defineType({
                         { title: 'H3', value: 'h3' },
                         { title: 'Quote', value: 'blockquote' },
                     ],
+                    lists: [
+                        { title: 'Opsomming', value: 'bullet' },
+                        { title: 'Genummerd', value: 'number' },
+                    ],
                     marks: {
                         decorators: [
                             { title: 'Vet', value: 'strong' },
