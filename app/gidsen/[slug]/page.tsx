@@ -10,11 +10,16 @@ import { urlFor } from '@/sanity/lib/image'
 import { breadcrumbJsonLd, articleJsonLd, JsonLd } from '@/lib/structured-data'
 import { client } from '../../../sanity/lib/client'
 import type { GidsBySlugQueryResult } from '@/sanity.types'
+import { vandaag } from '@/lib/utils'
 
 type Props = { params: Promise<{ slug: string }> }
 
+// Slugs die niet bij de build bestonden (of toen nog een toekomstige datum hadden) worden
+// op aanvraag gerenderd. Zo werkt een ingeplande gids op de dag zelf zonder nieuwe deployment.
+export const dynamicParams = true
+
 export async function generateStaticParams() {
-    const gidsen = await client.fetch<{ slug: string }[]>(allGidsSlugsQuery)
+    const gidsen = await client.fetch<{ slug: string }[]>(allGidsSlugsQuery, { vandaag: vandaag() })
     return gidsen.map((g) => ({ slug: g.slug }))
 }
 
@@ -22,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params
     const gids = await sanityFetch<GidsBySlugQueryResult>({
         query: gidsBySlugQuery,
-        params: { slug },
+        params: { slug, vandaag: vandaag() },
         tags: ['gids'],
     })
     if (!gids) return {}
@@ -41,7 +46,7 @@ export default async function GidsDetailPage({ params }: Props) {
     const { slug } = await params
     const gids = await sanityFetch<GidsBySlugQueryResult>({
         query: gidsBySlugQuery,
-        params: { slug },
+        params: { slug, vandaag: vandaag() },
         tags: ['gids', 'camping'],
     })
 

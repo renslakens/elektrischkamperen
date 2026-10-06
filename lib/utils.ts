@@ -24,3 +24,7 @@ export function slugToLand(slug: string): string {
     }
     return map[slug] ?? slug.charAt(0).toUpperCase() + slug.slice(1)
 }
+/** Datum van vandaag (UTC) als YYYY-MM-DD, voor het zichtbaarheidsfilter van gidsen. */
+export function vandaag(): string {
+    return new Date().toISOString().slice(0, 10)
+}

@@ -5,6 +5,7 @@ import type { AllGidsenQueryResult } from '@/sanity.types'
 import Link from 'next/link'
 import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/image'
+import { vandaag } from '@/lib/utils'
 
 export const metadata = maakMetadata({
     titel: 'EV-reisgidsen — Elektrisch kamperen in Europa',
@@ -15,6 +16,7 @@ export const metadata = maakMetadata({
 export default async function GidsenPage() {
     const gidsen = await sanityFetch<AllGidsenQueryResult>({
         query: allGidsenQuery,
+        params: { vandaag: vandaag() },
         tags: ['gids'],
     })
 

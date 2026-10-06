@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
-import { client } from '@/sanity/lib/client'
+import { sanityFetch } from '@/sanity/lib/fetch'
 import { defineQuery } from 'next-sanity'
-import { landToSlug } from '@/lib/utils'
+import { landToSlug, vandaag } from '@/lib/utils'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://elektrischkamperen.nl'
 
@@ -12,7 +12,7 @@ const routeSlugsQuery = defineQuery(`
   *[_type == "route"]{ "slug": slug.current, _updatedAt }
 `)
 const gidsSlugsQuery = defineQuery(`
-  *[_type == "gids"]{ "slug": slug.current, _updatedAt }
+  *[_type == "gids" && defined(slug.current) && (!defined(gepubliceerd_op) || gepubliceerd_op <= $vandaag)]{ "slug": slug.current, _updatedAt }
 `)
 const landenQuery = defineQuery(`
   *[_type == "camping" && defined(land)]{ "land": land }
@@ -20,10 +20,17 @@ const landenQuery = defineQuery(`
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const [campings, routes, gidsen, landenRaw] = await Promise.all([
-        client.fetch<{ slug: string; land: string | null; _updatedAt: string }[]>(campingSlugsQuery),
-        client.fetch<{ slug: string; _updatedAt: string }[]>(routeSlugsQuery),
-        client.fetch<{ slug: string; _updatedAt: string }[]>(gidsSlugsQuery),
-        client.fetch<{ land: string }[]>(landenQuery),
+        sanityFetch<{ slug: string; land: string | null; _updatedAt: string }[]>({
+            query: campingSlugsQuery,
+            tags: ['camping'],
+        }),
+        sanityFetch<{ slug: string; _updatedAt: string }[]>({ query: routeSlugsQuery, tags: ['route'] }),
+        sanityFetch<{ slug: string; _updatedAt: string }[]>({
+            query: gidsSlugsQuery,
+            params: { vandaag: vandaag() },
+            tags: ['gids'],
+        }),
+        sanityFetch<{ land: string }[]>({ query: landenQuery, tags: ['camping'] }),
     ])
 
     // Unieke landen
