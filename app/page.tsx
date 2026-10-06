@@ -35,11 +35,22 @@ export default async function HomePage() {
     }),
   ])
 
+  // Inhoudssecties wisselen wit en lichtgrijs af, ook als er een sectie ontbreekt (geen data).
+  // De USP-balk krijgt een groene tint, zodat hij zich onderscheidt van de grijze footer.
+  const zichtbareSecties = [
+    routes.length > 0 && 'routes',
+    gidsen.length > 0 && 'gidsen',
+    campings.length > 0 && 'campings',
+  ].filter(Boolean)
+  const achtergrond = (sectie: 'routes' | 'gidsen' | 'campings') =>
+    zichtbareSecties.indexOf(sectie) % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+
   return (
     <>
       <JsonLd data={websiteJsonLd()} />
 
-      <main>
+      {/* -mb-16 heft de mt-16 van de Footer op: de gekleurde USP-balk sluit direct aan op de footer */}
+      <main className="-mb-16">
 
         {/* ── Hero ── */}
         <section className="relative flex min-h-[480px] items-center justify-center overflow-hidden bg-green-900 px-4 py-20 text-white">
@@ -73,57 +84,61 @@ export default async function HomePage() {
 
         {/* ── Uitgelichte routes ── */}
         {routes.length > 0 && (
-          <section className="mx-auto max-w-5xl px-4 py-16">
-            <div className="mb-8 flex items-end justify-between">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900">Populaire routes</h2>
-                <p className="mt-1 text-gray-500">
-                  Uitgestippeld met laadstops en campings
-                </p>
+          <section className={`${achtergrond('routes')} px-4 py-16`}>
+            <div className="mx-auto max-w-5xl">
+              <div className="mb-8 flex items-end justify-between">
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900">Populaire routes</h2>
+                  <p className="mt-1 text-gray-500">
+                    Uitgestippeld met laadstops en campings
+                  </p>
+                </div>
+                <Link
+                  href="/routes"
+                  className="inline-block shrink-0 py-2 text-sm font-medium text-green-700 hover:underline"
+                >
+                  Alle routes →
+                </Link>
               </div>
-              <Link
-                href="/routes"
-                className="inline-block shrink-0 py-2 text-sm font-medium text-green-700 hover:underline"
-              >
-                Alle routes →
-              </Link>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {routes.map((route) => (
-                <RouteCard key={route._id} route={route} />
-              ))}
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {routes.map((route) => (
+                  <RouteCard key={route._id} route={route} />
+                ))}
+              </div>
             </div>
           </section>
         )}
 
         {/* ── Nieuwste gidsen ── */}
         {gidsen.length > 0 && (
-          <section className="mx-auto max-w-5xl px-4 py-16">
-            <div className="mb-8 flex items-end justify-between gap-4">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900">Nieuwste reisgidsen</h2>
-                <p className="mt-1 text-gray-500">
-                  Praktische tips voor elektrisch kamperen
-                </p>
+          <section className={`${achtergrond('gidsen')} px-4 py-16`}>
+            <div className="mx-auto max-w-5xl">
+              <div className="mb-8 flex items-end justify-between gap-4">
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900">Nieuwste reisgidsen</h2>
+                  <p className="mt-1 text-gray-500">
+                    Praktische tips voor elektrisch kamperen
+                  </p>
+                </div>
+                <Link
+                  href="/gidsen"
+                  className="inline-block shrink-0 py-2 text-sm font-medium text-green-700 hover:underline"
+                >
+                  Alle gidsen →
+                </Link>
               </div>
-              <Link
-                href="/gidsen"
-                className="inline-block shrink-0 py-2 text-sm font-medium text-green-700 hover:underline"
-              >
-                Alle gidsen →
-              </Link>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {gidsen.map((gids) => (
-                <GidsCard key={gids._id} gids={gids} kop="h3" />
-              ))}
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {gidsen.map((gids) => (
+                  <GidsCard key={gids._id} gids={gids} kop="h3" />
+                ))}
+              </div>
             </div>
           </section>
         )}
 
         {/* ── Uitgelichte campings ── */}
         {campings.length > 0 && (
-          <section className="bg-gray-50 px-4 py-16">
+          <section className={`${achtergrond('campings')} px-4 py-16`}>
             <div className="mx-auto max-w-5xl">
               <div className="mb-8 flex items-end justify-between">
                 <div>
@@ -151,7 +166,7 @@ export default async function HomePage() {
         )}
 
         {/* ── USP balk ── */}
-        <section className="border-t px-4 py-12">
+        <section className="bg-green-50/60 px-4 py-14">
           <div className="mx-auto grid max-w-4xl gap-8 sm:grid-cols-3">
             {[
               {
