@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { CookieSettingsLink } from '@/components/ui/CookieSettingsLink'
 
 const jaar = new Date().getFullYear()
 
@@ -40,6 +41,7 @@ export function Footer() {
                             <li><Link href="/over-ons" className="hover:text-green-700">Over Elektrisch Kamperen</Link></li>
                             <li><Link href="/affiliate-disclaimer" className="hover:text-green-700">Affiliate disclaimer</Link></li>
                             <li><Link href="/privacy" className="hover:text-green-700">Privacybeleid</Link></li>
+                            <li><CookieSettingsLink /></li>
                         </ul>
                     </div>
 

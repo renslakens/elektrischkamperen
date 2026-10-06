@@ -43,8 +43,9 @@ export default function PrivacyPage() {
                     </p>
                     <ul>
                         <li>
-                            <strong>Analytische gegevens</strong> — geanonimiseerde bezoekersstatistieken
-                            (paginaweergaven, herkomst) via tools die voldoen aan de AVG
+                            <strong>Analytische gegevens</strong> — bezoekersstatistieken
+                            (paginaweergaven, herkomst, klikken op affiliate-links) via Google Analytics,
+                            alleen nadat je daar toestemming voor hebt gegeven
                         </li>
                         <li>
                             <strong>Contactgegevens</strong> — alleen als je ons een e-mail stuurt of een
@@ -54,9 +55,17 @@ export default function PrivacyPage() {
 
                     <h2>Cookies</h2>
                     <p>
-                        ElektrischKamperen.nl gebruikt minimale cookies die nodig zijn voor het
-                        functioneren van de website. We plaatsen geen tracking- of
-                        advertentiecookies van derden zonder jouw toestemming.
+                        ElektrischKamperen.nl gebruikt zonder toestemming geen analytische cookies en
+                        geen advertentiecookies. Bij je eerste bezoek vragen we of we Google Analytics
+                        (via Google Tag Manager) mogen gebruiken. Zeg je nee, dan worden er geen
+                        analytische cookies geplaatst. We onthouden je keuze in je browser
+                        (localStorage).
+                    </p>
+                    <p>
+                        Heb je ja gezegd, dan plaatst Google Analytics cookies waarmee we zien hoe de
+                        website wordt gebruikt. Je kunt je keuze op elk moment wijzigen via
+                        &quot;Cookie-instellingen&quot; onderaan elke pagina. Google kan gegevens verwerken
+                        buiten de EU; zie het privacybeleid van Google.
                     </p>
                     <p>
                         Affiliate links (naar Booking.com, Bol.com etc.) kunnen cookies plaatsen op de
