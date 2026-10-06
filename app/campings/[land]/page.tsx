@@ -86,15 +86,17 @@ export default async function LandPage({ params }: Props) {
                     </p>
                 </div>
 
-                {/* Intro tekst — SEO */}
-                <div className="mb-8 rounded-xl border border-gray-100 bg-gray-50 p-6 text-sm leading-relaxed text-gray-600">
-                    <p>
-                        Op zoek naar een camping met laadpaal in {landNaam}? Wij belden alle
-                        campings persoonlijk op en controleerden de laadmogelijkheden ter
-                        plaatse. Zo weet je zeker hoeveel laadpunten er zijn, wat het
-                        vermogen is en of je caravan of camper naast de laadpaal past.
-                    </p>
-                </div>
+                {/* Intro tekst — SEO; alleen als er campings zijn, anders klopt de belofte niet */}
+                {campings.length > 0 && (
+                    <div className="mb-8 rounded-xl border border-gray-100 bg-gray-50 p-6 text-sm leading-relaxed text-gray-600">
+                        <p>
+                            Op zoek naar een camping met laadpaal in {landNaam}? We bellen elke
+                            camping op of controleren de laadmogelijkheden ter plaatse. Zo weet je
+                            hoeveel laadpunten er zijn, wat het vermogen is en of je caravan of
+                            camper naast de laadpaal past.
+                        </p>
+                    </div>
+                )}
 
                 {/* Grid */}
                 {campings.length > 0 ? (
