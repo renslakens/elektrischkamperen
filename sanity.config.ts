@@ -15,7 +15,16 @@ export default defineConfig({
   projectId,
   dataset,
   schema: {
-    types: schemaTypes
+    types: schemaTypes,
+    // Aanmeldingen komen alleen via het formulier binnen, niet via "nieuw document"
+    templates: (prev) => prev.filter((template) => template.schemaType !== 'aanmelding'),
+  },
+  document: {
+    // Aanmeldingen bevatten contactgegevens en mogen nooit gepubliceerd worden (publieke dataset)
+    actions: (prev, context) =>
+      context.schemaType === 'aanmelding'
+        ? prev.filter(({ action }) => action !== 'publish' && action !== 'duplicate')
+        : prev,
   },
   plugins: [
     structureTool({
@@ -38,6 +47,10 @@ export default defineConfig({
             ),
             S.listItem().title('Laadpalen').schemaType('laadpaal').child(
               S.documentTypeList('laadpaal')
+            ),
+            S.divider(),
+            S.listItem().title('Aanmeldingen').schemaType('aanmelding').child(
+              S.documentTypeList('aanmelding').defaultOrdering([{ field: 'ingediend_op', direction: 'desc' }])
             ),
           ]),
     }),

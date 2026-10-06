@@ -29,6 +29,7 @@ export function Footer() {
                             <li><Link href="/campings" className="hover:text-green-700">Campings met laadpaal</Link></li>
                             <li><Link href="/routes" className="hover:text-green-700">EV-reisroutes</Link></li>
                             <li><Link href="/gidsen" className="hover:text-green-700">Reisgidsen</Link></li>
+                            <li><Link href="/campings/aanmelden" className="hover:text-green-700">Camping aanmelden</Link></li>
                         </ul>
                     </div>
 

@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity'
+import { LANDEN, LAADSNELHEDEN } from '../../lib/camping-opties'
 
 export default defineType({
     name: 'camping',
@@ -38,8 +39,7 @@ export default defineType({
             name: 'land', title: 'Land', type: 'string',
             group: 'basis',
             options: {
-                list: ['Nederland', 'België', 'Duitsland', 'Frankrijk',
-                    'Italië', 'Spanje', 'Oostenrijk', 'Zwitserland', 'Kroatië'],
+                list: [...LANDEN],
             },
         }),
         defineField({
@@ -67,7 +67,7 @@ export default defineType({
             group: 'ev',
             description: 'Bijv. 11 kW, 22 kW, 50 kW',
             options: {
-                list: ['3,7 kW (Schuko)', '11 kW (Type 2)', '22 kW (Type 2)', '50 kW (DC)', '150 kW+ (HPC)'],
+                list: [...LAADSNELHEDEN],
             },
         }),
         defineField({

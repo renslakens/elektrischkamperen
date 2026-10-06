@@ -15,6 +15,47 @@
 export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: schema.json
+export type CampingReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "camping";
+};
+
+export type Aanmelding = {
+  _id: string;
+  _type: "aanmelding";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  camping?: CampingReference;
+  campingnaam?: string;
+  plaats?: string;
+  land?:
+    | "Nederland"
+    | "Belgi\xEB"
+    | "Duitsland"
+    | "Frankrijk"
+    | "Itali\xEB"
+    | "Spanje"
+    | "Oostenrijk"
+    | "Zwitserland"
+    | "Kroati\xEB";
+  aantal_laders?: number;
+  vermogen?:
+    | "3,7 kW (Schuko)"
+    | "11 kW (Type 2)"
+    | "22 kW (Type 2)"
+    | "50 kW (DC)"
+    | "150 kW+ (HPC)";
+  netwerk?: string;
+  contactpersoon?: string;
+  email?: string;
+  opmerking?: string;
+  akkoord_privacy?: boolean;
+  ingediend_op?: string;
+};
+
 export type Laadpaal = {
   _id: string;
   _type: "laadpaal";
@@ -43,13 +84,6 @@ export type SanityImageAssetReference = {
   _type: "reference";
   _weak?: boolean;
   [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-};
-
-export type CampingReference = {
-  _ref: string;
-  _type: "reference";
-  _weak?: boolean;
-  [internalGroqTypeReferenceTo]?: "camping";
 };
 
 export type Gids = {
@@ -394,10 +428,11 @@ export type SanityImageAsset = {
 };
 
 export type AllSanitySchemaTypes =
+  | CampingReference
+  | Aanmelding
   | Laadpaal
   | Geopoint
   | SanityImageAssetReference
-  | CampingReference
   | Gids
   | SanityImageCrop
   | SanityImageHotspot

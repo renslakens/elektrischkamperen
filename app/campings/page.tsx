@@ -1,4 +1,5 @@
 import { Suspense } from 'react'
+import Link from 'next/link'
 import { sanityFetch } from '@/sanity/lib/fetch'
 import { allCampingsQuery } from '@/sanity/queries/campings'
 import { maakMetadata } from '@/lib/metadata'
@@ -28,6 +29,21 @@ export default async function CampingsPage() {
             <Suspense fallback={<div className="text-gray-400">Laden...</div>}>
                 <CampingsClient campings={campings} />
             </Suspense>
+
+            <aside className="mt-12 flex flex-col gap-4 rounded-xl border bg-green-50 p-6 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                    <h2 className="font-semibold text-gray-900">Laadpaal op jouw camping?</h2>
+                    <p className="mt-1 text-sm text-gray-600">
+                        Meld je camping aan. Wij controleren de laadinfo en zetten hem daarna op de site.
+                    </p>
+                </div>
+                <Link
+                    href="/campings/aanmelden"
+                    className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-lg bg-green-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-green-800"
+                >
+                    Camping aanmelden
+                </Link>
+            </aside>
         </main>
     )
 }

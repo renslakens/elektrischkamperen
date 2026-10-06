@@ -53,6 +53,12 @@ export default function PrivacyPage() {
                         </li>
                     </ul>
 
+                    <p>
+                        Meld je via het formulier een camping aan, dan bewaren we je naam, e-mailadres en
+                        opmerking in ons contentbeheersysteem (Sanity). We gebruiken die gegevens alleen
+                        om de laadinfo met je te controleren en tonen ze niet op de website.
+                    </p>
+
                     <h2>Cookies</h2>
                     <p>
                         ElektrischKamperen.nl gebruikt zonder toestemming geen analytische cookies en

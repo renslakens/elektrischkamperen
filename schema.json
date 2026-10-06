@@ -1,5 +1,217 @@
 [
   {
+    "type": "type",
+    "name": "camping.reference",
+    "value": {
+      "type": "object",
+      "attributes": {
+        "_ref": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          }
+        },
+        "_type": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string",
+            "value": "reference"
+          }
+        },
+        "_weak": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
+          },
+          "optional": true
+        }
+      },
+      "dereferencesTo": "camping"
+    }
+  },
+  {
+    "name": "aanmelding",
+    "type": "document",
+    "attributes": {
+      "_id": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_type": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string",
+          "value": "aanmelding"
+        }
+      },
+      "_createdAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_updatedAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_rev": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "camping": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "inline",
+          "name": "camping.reference"
+        },
+        "optional": true
+      },
+      "campingnaam": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "plaats": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "land": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "union",
+          "of": [
+            {
+              "type": "string",
+              "value": "Nederland"
+            },
+            {
+              "type": "string",
+              "value": "België"
+            },
+            {
+              "type": "string",
+              "value": "Duitsland"
+            },
+            {
+              "type": "string",
+              "value": "Frankrijk"
+            },
+            {
+              "type": "string",
+              "value": "Italië"
+            },
+            {
+              "type": "string",
+              "value": "Spanje"
+            },
+            {
+              "type": "string",
+              "value": "Oostenrijk"
+            },
+            {
+              "type": "string",
+              "value": "Zwitserland"
+            },
+            {
+              "type": "string",
+              "value": "Kroatië"
+            }
+          ]
+        },
+        "optional": true
+      },
+      "aantal_laders": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "number"
+        },
+        "optional": true
+      },
+      "vermogen": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "union",
+          "of": [
+            {
+              "type": "string",
+              "value": "3,7 kW (Schuko)"
+            },
+            {
+              "type": "string",
+              "value": "11 kW (Type 2)"
+            },
+            {
+              "type": "string",
+              "value": "22 kW (Type 2)"
+            },
+            {
+              "type": "string",
+              "value": "50 kW (DC)"
+            },
+            {
+              "type": "string",
+              "value": "150 kW+ (HPC)"
+            }
+          ]
+        },
+        "optional": true
+      },
+      "netwerk": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "contactpersoon": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "email": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "opmerking": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "akkoord_privacy": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "boolean"
+        },
+        "optional": true
+      },
+      "ingediend_op": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      }
+    }
+  },
+  {
     "name": "laadpaal",
     "type": "document",
     "attributes": {
@@ -180,36 +392,6 @@
         }
       },
       "dereferencesTo": "sanity.imageAsset"
-    }
-  },
-  {
-    "type": "type",
-    "name": "camping.reference",
-    "value": {
-      "type": "object",
-      "attributes": {
-        "_ref": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string"
-          }
-        },
-        "_type": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string",
-            "value": "reference"
-          }
-        },
-        "_weak": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "boolean"
-          },
-          "optional": true
-        }
-      },
-      "dereferencesTo": "camping"
     }
   },
   {
