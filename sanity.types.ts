@@ -858,6 +858,26 @@ export type FeaturedCampingsQueryResult = Array<{
   ev_geverifieerd_op: string | null;
 }>;
 
+// Source: sanity/queries/homepage.ts
+// Variable: latestGidsenQuery
+// Query: *[_type == "gids" && (!defined(gepubliceerd_op) || gepubliceerd_op <= $vandaag)]    | order(coalesce(gepubliceerd_op, _createdAt) desc) [0...3] {    _id,    titel,    slug,    hook,    hero_image,    land,    geschikt_voor,    "aantal_campings": count(body[_type == "campingCard"])    }
+export type LatestGidsenQueryResult = Array<{
+  _id: string;
+  titel: string | null;
+  slug: Slug | null;
+  hook: string | null;
+  hero_image: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  } | null;
+  land: string | null;
+  geschikt_voor: Array<string> | null;
+  aantal_campings: number | null;
+}>;
+
 // Source: sanity/queries/routes.ts
 // Variable: allRoutesQuery
 // Query: *[_type == "route"] | order(totale_km asc) {        _id,        titel,        slug,        totale_km,        caravan_geschikt,        landen,        thumbnail,        seo_beschrijving,        "aantalEtappes": count(etappes),        "heeftLaadpaal": count(etappes[]->campings[]->[laadpaal_aanwezig == true]) > 0    }
@@ -1010,6 +1030,7 @@ declare global {
     '\n  *[_type == "gids" && defined(slug.current) && (!defined(gepubliceerd_op) || gepubliceerd_op <= $vandaag)]{ "slug": slug.current }\n': AllGidsSlugsQueryResult;
     '\n  *[_type == "route" && featured == true] | order(_updatedAt desc) [0...3] {\n    _id,\n    titel,\n    slug,\n    totale_km,\n    caravan_geschikt,\n    landen,\n    thumbnail,\n    seo_beschrijving,\n    "aantalEtappes": count(etappes),\n    "heeftLaadpaal": count(etappes[]->campings[]->[laadpaal_aanwezig == true]) > 0\n    }\n': FeaturedRoutesQueryResult;
     '\n  *[_type == "camping" && featured == true] | order(_updatedAt desc) [0...6] {\n    _id,\n    naam,\n    slug,\n    locatie,\n    land,\n    regio,\n    affiliate_link,\n    "thumbnail": afbeeldingen[0],\n    aantal_laders,\n    laadsnelheid,\n    netwerk,\n    laden_bij_tent,\n    snellader_in_buurt,\n    ev_geverifieerd_op\n    }\n': FeaturedCampingsQueryResult;
+    '\n  *[_type == "gids" && (!defined(gepubliceerd_op) || gepubliceerd_op <= $vandaag)]\n    | order(coalesce(gepubliceerd_op, _createdAt) desc) [0...3] {\n    _id,\n    titel,\n    slug,\n    hook,\n    hero_image,\n    land,\n    geschikt_voor,\n    "aantal_campings": count(body[_type == "campingCard"])\n    }\n': LatestGidsenQueryResult;
     '\n  *[_type == "route"] | order(totale_km asc) {\n        _id,\n        titel,\n        slug,\n        totale_km,\n        caravan_geschikt,\n        landen,\n        thumbnail,\n        seo_beschrijving,\n        "aantalEtappes": count(etappes),\n        "heeftLaadpaal": count(etappes[]->campings[]->[laadpaal_aanwezig == true]) > 0\n    }\n': AllRoutesQueryResult;
     '\n  *[_type == "route" && slug.current == $slug][0] {\n    _id,\n    titel,\n    slug,\n    beschrijving,\n    totale_km,\n    caravan_geschikt,\n    landen,\n    thumbnail,\n    seo_titel,\n    seo_beschrijving,\n    "etappes": etappes[]-> {\n        _id,\n        naam,\n        slug,\n        afstand_km,\n        hoogteverschil_m,\n        extra_verbruik_procent,\n        rijdtips,\n        polyline,\n        "campings": campings[]-> {\n            _id,\n            naam,\n            slug,\n            locatie,\n            "thumbnail": afbeeldingen[0],\n            aantal_laders,\n            laadsnelheid,\n            netwerk,\n            laden_bij_tent,\n            snellader_in_buurt\n        },\n        "laadpalen": laadpalen[]-> {\n            _id,\n            naam,\n            locatie,\n            max_kw,\n            netwerk,\n            connector_types\n        }\n    }\n}\n': RouteBySlugQueryResult;
     '\n  *[_type == "route"]{ "slug": slug.current }\n': AllRouteSlugsQueryResult;

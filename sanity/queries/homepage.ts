@@ -35,3 +35,18 @@ export const featuredCampingsQuery = defineQuery(`
     ev_geverifieerd_op
     }
 `)
+
+// Zelfde zichtbaarheidsfilter als in sanity/queries/gidsen.ts ($vandaag = vandaag() uit lib/utils)
+export const latestGidsenQuery = defineQuery(`
+  *[_type == "gids" && (!defined(gepubliceerd_op) || gepubliceerd_op <= $vandaag)]
+    | order(coalesce(gepubliceerd_op, _createdAt) desc) [0...3] {
+    _id,
+    titel,
+    slug,
+    hook,
+    hero_image,
+    land,
+    geschikt_voor,
+    "aantal_campings": count(body[_type == "campingCard"])
+    }
+`)

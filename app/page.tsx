@@ -1,16 +1,17 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { sanityFetch } from '@/sanity/lib/fetch'
-import { featuredRoutesQuery, featuredCampingsQuery } from '@/sanity/queries/homepage'
+import { featuredRoutesQuery, featuredCampingsQuery, latestGidsenQuery } from '@/sanity/queries/homepage'
 import { maakMetadata } from '@/lib/metadata'
 import { SearchBar } from '@/components/ui/SearchBar'
 import { RouteCard } from '@/components/route/RouteCard'
 import { CampingCard } from '@/components/camping/CampingCard'
-import { urlFor } from '@/sanity/lib/image'
+import { GidsCard } from '@/components/gids/GidsCard'
+import { vandaag } from '@/lib/utils'
 import { websiteJsonLd, JsonLd } from '@/lib/structured-data'
 import type {
   FeaturedRoutesQueryResult,
   FeaturedCampingsQueryResult,
+  LatestGidsenQueryResult,
 } from '@/sanity.types'
 
 export const metadata = maakMetadata({
@@ -18,7 +19,7 @@ export const metadata = maakMetadata({
 })
 
 export default async function HomePage() {
-  const [routes, campings] = await Promise.all([
+  const [routes, campings, gidsen] = await Promise.all([
     sanityFetch<FeaturedRoutesQueryResult>({
       query: featuredRoutesQuery,
       tags: ['route'],
@@ -26,6 +27,11 @@ export default async function HomePage() {
     sanityFetch<FeaturedCampingsQueryResult>({
       query: featuredCampingsQuery,
       tags: ['camping'],
+    }),
+    sanityFetch<LatestGidsenQueryResult>({
+      query: latestGidsenQuery,
+      params: { vandaag: vandaag() },
+      tags: ['gids'],
     }),
   ])
 
@@ -85,6 +91,31 @@ export default async function HomePage() {
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {routes.map((route) => (
                 <RouteCard key={route._id} route={route} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ── Nieuwste gidsen ── */}
+        {gidsen.length > 0 && (
+          <section className="mx-auto max-w-5xl px-4 py-16">
+            <div className="mb-8 flex items-end justify-between gap-4">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900">Nieuwste reisgidsen</h2>
+                <p className="mt-1 text-gray-500">
+                  Praktische tips voor elektrisch kamperen
+                </p>
+              </div>
+              <Link
+                href="/gidsen"
+                className="shrink-0 text-sm font-medium text-green-700 hover:underline"
+              >
+                Alle gidsen →
+              </Link>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {gidsen.map((gids) => (
+                <GidsCard key={gids._id} gids={gids} kop="h3" />
               ))}
             </div>
           </section>
