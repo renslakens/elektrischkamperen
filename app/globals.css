@@ -6,6 +6,18 @@
   /* eventuele custom tokens hier */
 }
 
+/* Tailwind v4 gebruikt currentColor als standaard randkleur (v3: gray-200). Zonder deze regel
+   worden alle `border`-klassen zonder kleur zwart: harde lijnen om kaarten, nav, footer en velden. */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #111827;
