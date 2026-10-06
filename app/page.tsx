@@ -57,14 +57,14 @@ export default async function HomePage() {
               Vind campings met laadpaal, plan je route en rij zorgeloos door Europa.
             </p>
             <SearchBar />
-            <div className="flex gap-4 text-sm text-green-200">
-              <Link href="/campings" className="hover:text-white hover:underline">
+            <div className="flex flex-wrap justify-center gap-x-4 text-sm text-green-200">
+              <Link href="/campings" className="inline-block py-2.5 hover:text-white hover:underline">
                 Alle campings →
               </Link>
-              <Link href="/routes" className="hover:text-white hover:underline">
+              <Link href="/routes" className="inline-block py-2.5 hover:text-white hover:underline">
                 Reisroutes →
               </Link>
-              <Link href="/gidsen" className="hover:text-white hover:underline">
+              <Link href="/gidsen" className="inline-block py-2.5 hover:text-white hover:underline">
                 Reisgidsen →
               </Link>
             </div>
@@ -83,7 +83,7 @@ export default async function HomePage() {
               </div>
               <Link
                 href="/routes"
-                className="text-sm font-medium text-green-700 hover:underline"
+                className="inline-block shrink-0 py-2 text-sm font-medium text-green-700 hover:underline"
               >
                 Alle routes →
               </Link>
@@ -108,7 +108,7 @@ export default async function HomePage() {
               </div>
               <Link
                 href="/gidsen"
-                className="shrink-0 text-sm font-medium text-green-700 hover:underline"
+                className="inline-block shrink-0 py-2 text-sm font-medium text-green-700 hover:underline"
               >
                 Alle gidsen →
               </Link>
@@ -136,7 +136,7 @@ export default async function HomePage() {
                 </div>
                 <Link
                   href="/campings"
-                  className="text-sm font-medium text-green-700 hover:underline"
+                  className="inline-block shrink-0 py-2 text-sm font-medium text-green-700 hover:underline"
                 >
                   Alle campings →
                 </Link>

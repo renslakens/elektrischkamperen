@@ -5,6 +5,7 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import Link from 'next/link'
 import type { AllCampingsQueryResult } from '@/sanity.types'
+import { isGeldigeLocatie } from '@/lib/utils'
 
 // Leaflet icon fix voor Next.js
 const icon = L.icon({
@@ -27,7 +28,7 @@ type Props = {
 
 export function CampingMap({ campings, activeCampingId, onHover }: Props) {
     const metLocatie = campings.filter(
-        (c) => c.locatie?.lat && c.locatie?.lng
+        (c) => isGeldigeLocatie(c.locatie)
     )
 
     return (

@@ -59,7 +59,7 @@ export function GidsCard({ gids, kop = 'h2' }: { gids: Gids; kop?: 'h2' | 'h3' }
                     ))}
                     {(gids.aantal_campings ?? 0) > 0 && (
                         <span className="rounded-full bg-green-100 px-3 py-1 text-xs text-green-700">
-                            {gids.aantal_campings} campings
+                            {gids.aantal_campings} camping{gids.aantal_campings === 1 ? '' : 's'}
                         </span>
                     )}
                 </div>

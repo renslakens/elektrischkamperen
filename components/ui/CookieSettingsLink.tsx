@@ -8,7 +8,7 @@ export function CookieSettingsLink() {
         <button
             type="button"
             onClick={() => window.dispatchEvent(new Event(OPEN_EVENT))}
-            className="hover:text-green-700"
+            className="inline-block py-2 hover:text-green-700"
         >
             Cookie-instellingen
         </button>

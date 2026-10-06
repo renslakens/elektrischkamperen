@@ -62,7 +62,7 @@ export default async function LandPage({ params }: Props) {
                 { naam: 'Campings', href: '/campings' },
                 { naam: landNaam, href: `/campings/${land}` },
             ])} />
-            <JsonLd data={faqJsonLd(faqItems)} />
+            {campings.length > 0 && <JsonLd data={faqJsonLd(faqItems)} />}
 
             <main className="mx-auto max-w-5xl px-4 py-10">
 
@@ -104,8 +104,24 @@ export default async function LandPage({ params }: Props) {
                         ))}
                     </div>
                 ) : (
-                    <div className="rounded-xl border bg-gray-50 p-12 text-center text-gray-400">
-                        Nog geen campings in {landNaam} — binnenkort meer.
+                    <div className="rounded-xl border bg-gray-50 p-8 text-center sm:p-12">
+                        <p className="text-gray-600">
+                            We hebben nog geen campings in {landNaam} met geverifieerde laadinfo.
+                        </p>
+                        <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                            <Link
+                                href="/campings"
+                                className="inline-flex min-h-11 items-center rounded-lg border bg-white px-4 text-sm font-medium text-gray-700 hover:border-green-500 hover:text-green-700"
+                            >
+                                Alle campings bekijken
+                            </Link>
+                            <Link
+                                href="/campings/aanmelden"
+                                className="inline-flex min-h-11 items-center rounded-lg bg-green-700 px-4 text-sm font-semibold text-white hover:bg-green-800"
+                            >
+                                Camping aanmelden
+                            </Link>
+                        </div>
                     </div>
                 )}
 
@@ -132,7 +148,8 @@ export default async function LandPage({ params }: Props) {
                     </div>
                 </div>
 
-                {/* FAQ sectie */}
+                {/* FAQ sectie — alleen als er campings zijn, anders klopt het antwoord niet */}
+                {campings.length > 0 && (
                 <div className="mt-12 border-t pt-8">
                     <h2 className="mb-6 text-xl font-bold text-gray-900">
                         Veelgestelde vragen
@@ -154,6 +171,7 @@ export default async function LandPage({ params }: Props) {
                         ))}
                     </div>
                 </div>
+                )}
             </main>
         </>
     )

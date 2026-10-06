@@ -25,11 +25,11 @@ export function Footer() {
                         <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-gray-400">
                             Ontdekken
                         </p>
-                        <ul className="space-y-2 text-sm text-gray-600">
-                            <li><Link href="/campings" className="hover:text-green-700">Campings met laadpaal</Link></li>
-                            <li><Link href="/routes" className="hover:text-green-700">EV-reisroutes</Link></li>
-                            <li><Link href="/gidsen" className="hover:text-green-700">Reisgidsen</Link></li>
-                            <li><Link href="/campings/aanmelden" className="hover:text-green-700">Camping aanmelden</Link></li>
+                        <ul className="text-sm text-gray-600">
+                            <li><Link href="/campings" className="inline-block py-2 hover:text-green-700">Campings met laadpaal</Link></li>
+                            <li><Link href="/routes" className="inline-block py-2 hover:text-green-700">EV-reisroutes</Link></li>
+                            <li><Link href="/gidsen" className="inline-block py-2 hover:text-green-700">Reisgidsen</Link></li>
+                            <li><Link href="/campings/aanmelden" className="inline-block py-2 hover:text-green-700">Camping aanmelden</Link></li>
                         </ul>
                     </div>
 
@@ -38,10 +38,10 @@ export function Footer() {
                         <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-gray-400">
                             Over ons
                         </p>
-                        <ul className="space-y-2 text-sm text-gray-600">
-                            <li><Link href="/over-ons" className="hover:text-green-700">Over Elektrisch Kamperen</Link></li>
-                            <li><Link href="/affiliate-disclaimer" className="hover:text-green-700">Affiliate disclaimer</Link></li>
-                            <li><Link href="/privacy" className="hover:text-green-700">Privacybeleid</Link></li>
+                        <ul className="text-sm text-gray-600">
+                            <li><Link href="/over-ons" className="inline-block py-2 hover:text-green-700">Over Elektrisch Kamperen</Link></li>
+                            <li><Link href="/affiliate-disclaimer" className="inline-block py-2 hover:text-green-700">Affiliate disclaimer</Link></li>
+                            <li><Link href="/privacy" className="inline-block py-2 hover:text-green-700">Privacybeleid</Link></li>
                             <li><CookieSettingsLink /></li>
                         </ul>
                     </div>

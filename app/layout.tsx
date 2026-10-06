@@ -21,6 +21,7 @@ export const metadata = maakMetadata({
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="nl">
+      <head>
       {/* Consent Mode v2: standaard alles geweigerd, vóór GTM laadt.
           Terugkerende bezoekers die eerder akkoord gingen krijgen analytics_storage direct 'granted'. */}
       <Script id="consent-default" strategy="beforeInteractive">{`
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           ad_personalization: 'denied'
         });
       `}</Script>
+      </head>
       {GTM_ID && <GoogleTagManager gtmId={GTM_ID} />}
       <body className={`${inter.className} min-h-screen flex flex-col bg-white text-gray-900 antialiased`}>
         <Nav />

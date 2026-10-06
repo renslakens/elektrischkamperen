@@ -34,6 +34,13 @@ export default defineType({
         defineField({
             name: 'locatie', title: 'Locatie', type: 'geopoint',
             group: 'basis',
+            description: 'Decimale graden, bijv. 51.16 / 5.55 (let op de punt)',
+            validation: r => r.custom((punt?: { lat?: number; lng?: number }) => {
+                if (!punt || punt.lat === undefined || punt.lng === undefined) return true
+                return Math.abs(punt.lat) <= 90 && Math.abs(punt.lng) <= 180
+                    ? true
+                    : 'Ongeldige coördinaten: breedtegraad tussen -90 en 90, lengtegraad tussen -180 en 180'
+            }),
         }),
         defineField({
             name: 'land', title: 'Land', type: 'string',

@@ -9,6 +9,16 @@ export async function GET(req: NextRequest) {
     if (!lat || !lng) {
         return NextResponse.json({ error: 'lat en lng zijn verplicht' }, { status: 400 })
     }
+    const latGetal = Number(lat)
+    const lngGetal = Number(lng)
+    const straal = Number(radius)
+    if (
+        !Number.isFinite(latGetal) || Math.abs(latGetal) > 90 ||
+        !Number.isFinite(lngGetal) || Math.abs(lngGetal) > 180 ||
+        !Number.isFinite(straal) || straal <= 0 || straal > 50
+    ) {
+        return NextResponse.json({ error: 'Ongeldige coördinaten of straal' }, { status: 400 })
+    }
 
     const params = new URLSearchParams({
         key: process.env.OCM_API_KEY!,

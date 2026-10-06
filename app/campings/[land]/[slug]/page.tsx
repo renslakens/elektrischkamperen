@@ -8,7 +8,7 @@ import { AffiliateButton } from '@/components/camping/AffiliateButton'
 import { CampingImageGallery } from '@/components/camping/CampingImageGallery'
 import { NearbyChargers } from '@/components/camping/NearbyChargers'
 import { urlFor } from '@/sanity/lib/image'
-import { slugToLand, landToSlug } from '@/lib/utils'
+import { slugToLand, landToSlug, isGeldigeLocatie } from '@/lib/utils'
 import { breadcrumbJsonLd, campingJsonLd, faqJsonLd, JsonLd } from '@/lib/structured-data'
 import { client } from '../../../../sanity/lib/client'
 import type { CampingBySlugQueryResult } from '@/sanity.types'
@@ -97,8 +97,8 @@ export default async function CampingDetailPage({ params }: Props) {
                 slug,
                 land: camping.land ?? null,
                 regio: camping.regio ?? null,
-                lat: camping.locatie?.lat ?? null,
-                lng: camping.locatie?.lng ?? null,
+                lat: isGeldigeLocatie(camping.locatie) ? camping.locatie.lat : null,
+                lng: isGeldigeLocatie(camping.locatie) ? camping.locatie.lng : null,
                 afbeelding: camping.afbeeldingen?.[0]?.asset
                     ? urlFor(camping.afbeeldingen[0]).width(1200).url()
                     : null,
@@ -169,8 +169,8 @@ export default async function CampingDetailPage({ params }: Props) {
                                 </div>
                             )}
 
-                            {/* OpenChargeMap integratie — alleen tonen als locatie bekend is */}
-                            {camping.locatie?.lat && camping.locatie?.lng && (
+                            {/* OpenChargeMap integratie — alleen tonen als locatie bekend en geldig is */}
+                            {isGeldigeLocatie(camping.locatie) && (
                                 <NearbyChargers
                                     lat={camping.locatie.lat}
                                     lng={camping.locatie.lng}

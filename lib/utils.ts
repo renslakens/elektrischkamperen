@@ -28,3 +28,17 @@ export function slugToLand(slug: string): string {
 export function vandaag(): string {
     return new Date().toISOString().slice(0, 10)
 }
+
+type Locatie = { lat?: number | null; lng?: number | null } | null | undefined
+
+/** Geldige WGS84-coördinaten? Vangt o.a. vergeten decimale punten op (lat 511627). */
+export function isGeldigeLocatie(locatie: Locatie): locatie is { lat: number; lng: number } {
+    const lat = locatie?.lat
+    const lng = locatie?.lng
+    return (
+        typeof lat === 'number' && typeof lng === 'number' &&
+        Number.isFinite(lat) && Number.isFinite(lng) &&
+        Math.abs(lat) <= 90 && Math.abs(lng) <= 180 &&
+        !(lat === 0 && lng === 0)
+    )
+}
