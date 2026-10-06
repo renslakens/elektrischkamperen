@@ -10,7 +10,9 @@ import { urlFor } from '@/sanity/lib/image'
 import { breadcrumbJsonLd, articleJsonLd, JsonLd } from '@/lib/structured-data'
 import { client } from '../../../sanity/lib/client'
 import type { GidsBySlugQueryResult } from '@/sanity.types'
-import { vandaag } from '@/lib/utils'
+import Link from 'next/link'
+import { landToSlug, vandaag } from '@/lib/utils'
+import { LANDEN } from '@/lib/camping-opties'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -51,6 +53,9 @@ export default async function GidsDetailPage({ params }: Props) {
     })
 
     if (!gids) notFound()
+
+    // Alleen linken naar landen met een landpagina; "Europa" en vrije tekst vallen af
+    const landMetPagina = (LANDEN as readonly string[]).includes(gids.land ?? '') ? gids.land : null
 
     return (
         <>
@@ -120,6 +125,24 @@ export default async function GidsDetailPage({ params }: Props) {
                             components={portableTextComponents}
                         />
                     </div>
+                )}
+
+                {/* Interne link naar de landpagina */}
+                {landMetPagina && (
+                    <Link
+                        href={`/campings/${landToSlug(landMetPagina)}`}
+                        className="group mt-12 flex items-center justify-between gap-4 rounded-xl border bg-green-50 p-5 transition hover:border-green-500"
+                    >
+                        <span>
+                            <span className="block font-semibold text-gray-900 group-hover:text-green-700">
+                                Campings met laadpaal in {landMetPagina}
+                            </span>
+                            <span className="mt-1 block text-sm text-gray-600">
+                                Bekijk campings met geverifieerde laadinfo
+                            </span>
+                        </span>
+                        <span aria-hidden="true" className="text-xl text-green-700">→</span>
+                    </Link>
                 )}
 
                 {/* Publicatiedatum */}

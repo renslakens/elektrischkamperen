@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import { sanityFetch } from '@/sanity/lib/fetch'
 import { routeBySlugQuery, allRouteSlugsQuery } from '@/sanity/queries/routes'
 import { maakMetadata } from '@/lib/metadata'
@@ -9,6 +10,7 @@ import { urlFor } from '@/sanity/lib/image'
 import { client } from '../../../sanity/lib/client'
 import { breadcrumbJsonLd, JsonLd } from '@/lib/structured-data'
 import type { RouteBySlugQueryResult } from '@/sanity.types'
+import { landToSlug } from '@/lib/utils'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -119,6 +121,26 @@ export default async function RouteDetailPage({ params }: Props) {
                         <div className="space-y-10">
                             {route.etappes.map((etappe, i) => (
                                 <EtappeBlok key={etappe._id} etappe={etappe} index={i} />
+                            ))}
+                        </div>
+                    </section>
+                )}
+
+                {/* Interne links naar de landpagina's van deze route */}
+                {(route.landen?.length ?? 0) > 0 && (
+                    <section className="mt-12 border-t pt-8">
+                        <h2 className="mb-4 text-lg font-semibold text-gray-900">
+                            Campings met laadpaal langs deze route
+                        </h2>
+                        <div className="flex flex-wrap gap-2">
+                            {route.landen?.map((land) => (
+                                <Link
+                                    key={land}
+                                    href={`/campings/${landToSlug(land)}`}
+                                    className="inline-flex min-h-11 items-center rounded-full border px-4 text-sm text-gray-700 transition hover:border-green-500 hover:text-green-700"
+                                >
+                                    Campings in {land} →
+                                </Link>
                             ))}
                         </div>
                     </section>
