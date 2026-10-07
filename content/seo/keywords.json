@@ -1,0 +1,1872 @@
+{
+  "bijgewerkt_op": "2026-10-07",
+  "zoekwoorden": [
+    {
+      "term": "anwb camping met laadpaal",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "camping-ladpal",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "auto laden op de camping",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "camping-lad",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "bereik elektrische auto met caravan",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "bereik-caravan",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "beste laadpas buitenland",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "commercieel",
+      "cluster": "buitenland-ladpas",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "beste laadpas voor het buitenland",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "commercieel",
+      "cluster": "buitenland-ladpas",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "camping italie met laadpaal",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "camping-ladpal--italie",
+      "land": "Italië",
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "camping laadpaal",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "camping-ladpal",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "camping met laadpaal",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "camping-ladpal",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        },
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "camping met laadpaal duitsland",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "camping-ladpal--duitsland",
+      "land": "Duitsland",
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        },
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "camping met laadpaal frankrijk",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "camping-ladpal--frankrijk",
+      "land": "Frankrijk",
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        },
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "camping met laadpaal nederland",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "camping-ladpal--nederland",
+      "land": "Nederland",
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        },
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "camping zuid frankrijk met laadpaal",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "camping-ladpal--frankrijk",
+      "land": "Frankrijk",
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "caravan trekken met elektrische auto",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "caravan-trek",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        },
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "cee adapter elektrische auto",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "commercieel",
+      "cluster": "adapter-ce",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "elektrische auto kamperen",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "auto-elektrisch-kamper",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "elektrische auto laden op de camping",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "camping-lad",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "elektrische auto met vouwwagen",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "vouwwag",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "eneco laadpas buitenland",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "commercieel",
+      "cluster": "buitenland-ladpas",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "kan je een caravan trekken met een elektrische auto",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "caravan-trek",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "kun je met een elektrische auto op vakantie",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "auto-elektrisch-vakanti",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laadpaal camping",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "camping-ladpal",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laadpas buitenland",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "commercieel",
+      "cluster": "buitenland-ladpas",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        },
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laadpas buitenland aanvragen",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "transactioneel",
+      "cluster": "buitenland-ladpas",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laadpas buitenland anwb",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "commercieel",
+      "cluster": "buitenland-ladpas",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laadpas buitenland particulier",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "commercieel",
+      "cluster": "buitenland-ladpas",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laadpas buitenland vergelijken",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "commercieel",
+      "cluster": "buitenland-ladpas",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laadpas buitenland zonder abonnement",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "commercieel",
+      "cluster": "buitenland-ladpas",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laadpas duitsland",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "commercieel",
+      "cluster": "ladpas--duitsland",
+      "land": "Duitsland",
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laadpas frankrijk",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "commercieel",
+      "cluster": "ladpas--frankrijk",
+      "land": "Frankrijk",
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laden camping",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "camping-lad",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laden camping morteratsch",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": null,
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laden camping wagner",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": null,
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laden elektrische auto duitsland",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "lad--duitsland",
+      "land": "Duitsland",
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laden elektrische auto frankrijk",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "lad--frankrijk",
+      "land": "Frankrijk",
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        },
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laden elektrische auto italie",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "lad--italie",
+      "land": "Italië",
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laden elektrische auto oostenrijk",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "lad--oostenrijk",
+      "land": "Oostenrijk",
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laden elektrische auto spanje",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "lad--spanje",
+      "land": "Spanje",
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laden met caravan",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "caravan-lad",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laden op de camping",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "camping-lad",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        },
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "laden via campingstroom",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "campingstrom-lad",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "mag je je elektrische auto laden op de camping",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "camping-lad",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "met elektrische auto en caravan op vakantie",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "caravan",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "met elektrische auto naar zuid frankrijk",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "zuid--frankrijk",
+      "land": "Frankrijk",
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "met elektrische auto op vakantie",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "handmatig",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "auto-elektrisch-vakanti",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "handmatig",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        },
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "met elektrische auto op vakantie ervaringen",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "commercieel",
+      "cluster": "auto-elektrisch-vakanti",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "met elektrische auto op vakantie naar frankrijk",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "auto-elektrisch-vakanti--frankrijk",
+      "land": "Frankrijk",
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "met elektrische auto op vakantie naar spanje",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "auto-elektrisch-vakanti--spanje",
+      "land": "Spanje",
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "mtc laadpas buitenland",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "commercieel",
+      "cluster": "buitenland-ladpas",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "op vakantie naar denemarken met elektrische auto",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "denemark",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "op vakantie naar italie met elektrische auto",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "auto-elektrisch-vakanti--italie",
+      "land": "Italië",
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "shell laadpas buitenland",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "commercieel",
+      "cluster": "buitenland-ladpas",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "tips met elektrische auto op vakantie",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "informatief",
+      "cluster": "auto-elektrisch-vakanti",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    },
+    {
+      "term": "welke laadpas buitenland",
+      "volume": null,
+      "moeilijkheid": null,
+      "cpc": null,
+      "bron": "autocomplete",
+      "datum": "2026-10-07",
+      "intentie": "commercieel",
+      "cluster": "buitenland-ladpas",
+      "land": null,
+      "metingen": [
+        {
+          "bron": "autocomplete",
+          "datum": "2026-10-07",
+          "volume": null,
+          "moeilijkheid": null,
+          "cpc": null
+        }
+      ]
+    }
+  ],
+  "clusters": [
+    {
+      "id": "adapter-ce",
+      "hoofdterm": "cee adapter elektrische auto",
+      "termen": [
+        "cee adapter elektrische auto"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": null,
+      "intentie": "commercieel",
+      "prioriteit": 50,
+      "score": {
+        "volume": 0,
+        "usp": 1,
+        "commercieel": 1,
+        "search_console": 0,
+        "dekkingsfactor": 1
+      },
+      "themas": [
+        "laden op de camping"
+      ],
+      "affiliate": [
+        "adapter"
+      ],
+      "signalen": [],
+      "gedekt_door": null,
+      "dekking": "nee"
+    },
+    {
+      "id": "ladpas--duitsland",
+      "hoofdterm": "laadpas duitsland",
+      "termen": [
+        "laadpas duitsland"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": "Duitsland",
+      "intentie": "commercieel",
+      "prioriteit": 32,
+      "score": {
+        "volume": 0,
+        "usp": 0.4,
+        "commercieel": 1,
+        "search_console": 0,
+        "dekkingsfactor": 1
+      },
+      "themas": [],
+      "affiliate": [
+        "laadpas"
+      ],
+      "signalen": [],
+      "gedekt_door": null,
+      "dekking": "nee"
+    },
+    {
+      "id": "auto-elektrisch-vakanti--italie",
+      "hoofdterm": "op vakantie naar italie met elektrische auto",
+      "termen": [
+        "op vakantie naar italie met elektrische auto"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": "Italië",
+      "intentie": "informatief",
+      "prioriteit": 27,
+      "score": {
+        "volume": 0,
+        "usp": 0.9,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 1
+      },
+      "themas": [
+        "kamperen met een elektrische auto"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": null,
+      "dekking": "nee"
+    },
+    {
+      "id": "auto-elektrisch-vakanti--spanje",
+      "hoofdterm": "met elektrische auto op vakantie naar spanje",
+      "termen": [
+        "met elektrische auto op vakantie naar spanje"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": "Spanje",
+      "intentie": "informatief",
+      "prioriteit": 27,
+      "score": {
+        "volume": 0,
+        "usp": 0.9,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 1
+      },
+      "themas": [
+        "kamperen met een elektrische auto"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": null,
+      "dekking": "nee"
+    },
+    {
+      "id": "ladpas--frankrijk",
+      "hoofdterm": "laadpas frankrijk",
+      "termen": [
+        "laadpas frankrijk"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": "Frankrijk",
+      "intentie": "commercieel",
+      "prioriteit": 19.2,
+      "score": {
+        "volume": 0,
+        "usp": 0.4,
+        "commercieel": 1,
+        "search_console": 0,
+        "dekkingsfactor": 0.6
+      },
+      "themas": [],
+      "affiliate": [
+        "laadpas"
+      ],
+      "signalen": [],
+      "gedekt_door": "laden-elektrische-auto-frankrijk",
+      "dekking": "bijna"
+    },
+    {
+      "id": "campingstrom-lad",
+      "hoofdterm": "laden via campingstroom",
+      "termen": [
+        "laden via campingstroom"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": null,
+      "intentie": "informatief",
+      "prioriteit": 18,
+      "score": {
+        "volume": 0,
+        "usp": 1,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 0.6
+      },
+      "themas": [
+        "laden op de camping"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": "laden-op-de-camping",
+      "dekking": "bijna"
+    },
+    {
+      "id": "caravan",
+      "hoofdterm": "met elektrische auto en caravan op vakantie",
+      "termen": [
+        "met elektrische auto en caravan op vakantie"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": null,
+      "intentie": "informatief",
+      "prioriteit": 18,
+      "score": {
+        "volume": 0,
+        "usp": 1,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 0.6
+      },
+      "themas": [
+        "caravan en camper",
+        "kamperen met een elektrische auto"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": "met-elektrische-auto-op-vakantie",
+      "dekking": "bijna"
+    },
+    {
+      "id": "caravan-trek",
+      "hoofdterm": "caravan trekken met elektrische auto",
+      "termen": [
+        "caravan trekken met elektrische auto",
+        "kan je een caravan trekken met een elektrische auto"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 2,
+      "land": null,
+      "intentie": "informatief",
+      "prioriteit": 18,
+      "score": {
+        "volume": 0,
+        "usp": 0.6,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 1
+      },
+      "themas": [
+        "caravan en camper"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": null,
+      "dekking": "nee"
+    },
+    {
+      "id": "vouwwag",
+      "hoofdterm": "elektrische auto met vouwwagen",
+      "termen": [
+        "elektrische auto met vouwwagen"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": null,
+      "intentie": "informatief",
+      "prioriteit": 18,
+      "score": {
+        "volume": 0,
+        "usp": 0.6,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 1
+      },
+      "themas": [
+        "caravan en camper"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": null,
+      "dekking": "nee"
+    },
+    {
+      "id": "auto-elektrisch-vakanti--frankrijk",
+      "hoofdterm": "met elektrische auto op vakantie naar frankrijk",
+      "termen": [
+        "met elektrische auto op vakantie naar frankrijk"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": "Frankrijk",
+      "intentie": "informatief",
+      "prioriteit": 16.2,
+      "score": {
+        "volume": 0,
+        "usp": 0.9,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 0.6
+      },
+      "themas": [
+        "kamperen met een elektrische auto"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": "laden-elektrische-auto-frankrijk",
+      "dekking": "bijna"
+    },
+    {
+      "id": "buitenland-ladpas",
+      "hoofdterm": "laadpas buitenland",
+      "termen": [
+        "beste laadpas buitenland",
+        "beste laadpas voor het buitenland",
+        "eneco laadpas buitenland",
+        "laadpas buitenland",
+        "laadpas buitenland aanvragen",
+        "laadpas buitenland anwb",
+        "laadpas buitenland particulier",
+        "laadpas buitenland vergelijken",
+        "laadpas buitenland zonder abonnement",
+        "mtc laadpas buitenland",
+        "shell laadpas buitenland",
+        "welke laadpas buitenland"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 12,
+      "land": null,
+      "intentie": "commercieel",
+      "prioriteit": 12,
+      "score": {
+        "volume": 0,
+        "usp": 0,
+        "commercieel": 1,
+        "search_console": 0,
+        "dekkingsfactor": 0.6
+      },
+      "themas": [],
+      "affiliate": [
+        "laadpas"
+      ],
+      "signalen": [],
+      "gedekt_door": "met-elektrische-auto-op-vakantie",
+      "dekking": "bijna"
+    },
+    {
+      "id": "lad--duitsland",
+      "hoofdterm": "laden elektrische auto duitsland",
+      "termen": [
+        "laden elektrische auto duitsland"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": "Duitsland",
+      "intentie": "informatief",
+      "prioriteit": 12,
+      "score": {
+        "volume": 0,
+        "usp": 0.4,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 1
+      },
+      "themas": [],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": null,
+      "dekking": "nee"
+    },
+    {
+      "id": "lad--italie",
+      "hoofdterm": "laden elektrische auto italie",
+      "termen": [
+        "laden elektrische auto italie"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": "Italië",
+      "intentie": "informatief",
+      "prioriteit": 12,
+      "score": {
+        "volume": 0,
+        "usp": 0.4,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 1
+      },
+      "themas": [],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": null,
+      "dekking": "nee"
+    },
+    {
+      "id": "lad--oostenrijk",
+      "hoofdterm": "laden elektrische auto oostenrijk",
+      "termen": [
+        "laden elektrische auto oostenrijk"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": "Oostenrijk",
+      "intentie": "informatief",
+      "prioriteit": 12,
+      "score": {
+        "volume": 0,
+        "usp": 0.4,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 1
+      },
+      "themas": [],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": null,
+      "dekking": "nee"
+    },
+    {
+      "id": "lad--spanje",
+      "hoofdterm": "laden elektrische auto spanje",
+      "termen": [
+        "laden elektrische auto spanje"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": "Spanje",
+      "intentie": "informatief",
+      "prioriteit": 12,
+      "score": {
+        "volume": 0,
+        "usp": 0.4,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 1
+      },
+      "themas": [],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": null,
+      "dekking": "nee"
+    },
+    {
+      "id": "bereik-caravan",
+      "hoofdterm": "bereik elektrische auto met caravan",
+      "termen": [
+        "bereik elektrische auto met caravan"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": null,
+      "intentie": "informatief",
+      "prioriteit": 10.8,
+      "score": {
+        "volume": 0,
+        "usp": 0.6,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 0.6
+      },
+      "themas": [
+        "caravan en camper"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": "met-elektrische-auto-op-vakantie",
+      "dekking": "bijna"
+    },
+    {
+      "id": "caravan-lad",
+      "hoofdterm": "laden met caravan",
+      "termen": [
+        "laden met caravan"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": null,
+      "intentie": "informatief",
+      "prioriteit": 10.8,
+      "score": {
+        "volume": 0,
+        "usp": 0.6,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 0.6
+      },
+      "themas": [
+        "caravan en camper"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": "laden-op-de-camping",
+      "dekking": "bijna"
+    },
+    {
+      "id": "auto-elektrisch-kamper",
+      "hoofdterm": "elektrische auto kamperen",
+      "termen": [
+        "elektrische auto kamperen"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": null,
+      "intentie": "informatief",
+      "prioriteit": 9,
+      "score": {
+        "volume": 0,
+        "usp": 0.5,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 0.6
+      },
+      "themas": [
+        "kamperen met een elektrische auto"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": "met-elektrische-auto-op-vakantie",
+      "dekking": "bijna"
+    },
+    {
+      "id": "denemark",
+      "hoofdterm": "op vakantie naar denemarken met elektrische auto",
+      "termen": [
+        "op vakantie naar denemarken met elektrische auto"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": null,
+      "intentie": "informatief",
+      "prioriteit": 9,
+      "score": {
+        "volume": 0,
+        "usp": 0.5,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 0.6
+      },
+      "themas": [
+        "kamperen met een elektrische auto"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": "met-elektrische-auto-op-vakantie",
+      "dekking": "bijna"
+    },
+    {
+      "id": "zuid--frankrijk",
+      "hoofdterm": "met elektrische auto naar zuid frankrijk",
+      "termen": [
+        "met elektrische auto naar zuid frankrijk"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": "Frankrijk",
+      "intentie": "informatief",
+      "prioriteit": 7.2,
+      "score": {
+        "volume": 0,
+        "usp": 0.4,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 0.6
+      },
+      "themas": [],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": "laden-elektrische-auto-frankrijk",
+      "dekking": "bijna"
+    },
+    {
+      "id": "camping-lad",
+      "hoofdterm": "laden camping",
+      "termen": [
+        "auto laden op de camping",
+        "elektrische auto laden op de camping",
+        "laden camping",
+        "laden op de camping",
+        "mag je je elektrische auto laden op de camping"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 5,
+      "land": null,
+      "intentie": "informatief",
+      "prioriteit": 6,
+      "score": {
+        "volume": 0,
+        "usp": 1,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 0.2
+      },
+      "themas": [
+        "laden op de camping"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": "laden-op-de-camping",
+      "dekking": "gedekt"
+    },
+    {
+      "id": "camping-ladpal",
+      "hoofdterm": "camping laadpaal",
+      "termen": [
+        "anwb camping met laadpaal",
+        "camping laadpaal",
+        "camping met laadpaal",
+        "laadpaal camping"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 4,
+      "land": null,
+      "intentie": "informatief",
+      "prioriteit": 6,
+      "score": {
+        "volume": 0,
+        "usp": 1,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 0.2
+      },
+      "themas": [
+        "laden op de camping"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": "/campings",
+      "dekking": "gedekt"
+    },
+    {
+      "id": "camping-ladpal--duitsland",
+      "hoofdterm": "camping met laadpaal duitsland",
+      "termen": [
+        "camping met laadpaal duitsland"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": "Duitsland",
+      "intentie": "informatief",
+      "prioriteit": 6,
+      "score": {
+        "volume": 0,
+        "usp": 1,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 0.2
+      },
+      "themas": [
+        "laden op de camping"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": "/campings/duitsland",
+      "dekking": "gedekt"
+    },
+    {
+      "id": "camping-ladpal--frankrijk",
+      "hoofdterm": "camping met laadpaal frankrijk",
+      "termen": [
+        "camping met laadpaal frankrijk",
+        "camping zuid frankrijk met laadpaal"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 2,
+      "land": "Frankrijk",
+      "intentie": "informatief",
+      "prioriteit": 6,
+      "score": {
+        "volume": 0,
+        "usp": 1,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 0.2
+      },
+      "themas": [
+        "laden op de camping"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": "/campings/frankrijk",
+      "dekking": "gedekt"
+    },
+    {
+      "id": "camping-ladpal--italie",
+      "hoofdterm": "camping italie met laadpaal",
+      "termen": [
+        "camping italie met laadpaal"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": "Italië",
+      "intentie": "informatief",
+      "prioriteit": 6,
+      "score": {
+        "volume": 0,
+        "usp": 1,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 0.2
+      },
+      "themas": [
+        "laden op de camping"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": "/campings/italie",
+      "dekking": "gedekt"
+    },
+    {
+      "id": "camping-ladpal--nederland",
+      "hoofdterm": "camping met laadpaal nederland",
+      "termen": [
+        "camping met laadpaal nederland"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": "Nederland",
+      "intentie": "informatief",
+      "prioriteit": 6,
+      "score": {
+        "volume": 0,
+        "usp": 1,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 0.2
+      },
+      "themas": [
+        "laden op de camping"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": "/campings/nederland",
+      "dekking": "gedekt"
+    },
+    {
+      "id": "auto-elektrisch-vakanti",
+      "hoofdterm": "met elektrische auto op vakantie",
+      "termen": [
+        "kun je met een elektrische auto op vakantie",
+        "met elektrische auto op vakantie",
+        "met elektrische auto op vakantie ervaringen",
+        "tips met elektrische auto op vakantie"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 4,
+      "land": null,
+      "intentie": "informatief",
+      "prioriteit": 3,
+      "score": {
+        "volume": 0,
+        "usp": 0.5,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 0.2
+      },
+      "themas": [
+        "kamperen met een elektrische auto"
+      ],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": "met-elektrische-auto-op-vakantie",
+      "dekking": "gedekt"
+    },
+    {
+      "id": "lad--frankrijk",
+      "hoofdterm": "laden elektrische auto frankrijk",
+      "termen": [
+        "laden elektrische auto frankrijk"
+      ],
+      "totaal_volume": null,
+      "termen_zonder_volume": 1,
+      "land": "Frankrijk",
+      "intentie": "informatief",
+      "prioriteit": 2.4,
+      "score": {
+        "volume": 0,
+        "usp": 0.4,
+        "commercieel": 0,
+        "search_console": 0,
+        "dekkingsfactor": 0.2
+      },
+      "themas": [],
+      "affiliate": [],
+      "signalen": [],
+      "gedekt_door": "laden-elektrische-auto-frankrijk",
+      "dekking": "gedekt"
+    }
+  ]
+}
