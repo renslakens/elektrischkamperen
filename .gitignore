@@ -43,3 +43,6 @@ next-env.d.ts
 # claude
 CLAUDE.md
 AGENTS.md
+
+# seo-toolkit: cache van externe aanroepen (zie seo.config.json → dataMap)
+/content/seo/.cache/

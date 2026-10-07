@@ -7,7 +7,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "import:gids": "tsx --env-file=.env.local scripts/import-gids.ts"
+    "import:gids": "tsx --env-file=.env.local scripts/import-gids.ts",
+    "seo:import": "seo import",
+    "seo:expand": "seo expand",
+    "seo:cluster": "seo cluster",
+    "seo:next": "seo next",
+    "seo:dekking": "seo dekking",
+    "seo:brief": "seo brief",
+    "seo:links": "seo links",
+    "seo:lint": "seo lint",
+    "seo:gsc": "seo gsc",
+    "seo:init": "seo init"
   },
   "dependencies": {
     "@next/third-parties": "^16.3.8",
@@ -36,6 +46,7 @@
     "eslint-config-next": "16.2.5",
     "gray-matter": "^4.0.3",
     "marked": "^18.0.14",
+    "seo-toolkit": "file:../seo-toolkit",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
     "typescript": "^5"

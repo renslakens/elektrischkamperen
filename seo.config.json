@@ -1,0 +1,167 @@
+{
+  "$uitleg": "Configuratie voor seo-toolkit (../seo-toolkit). Alles wat site-specifiek is staat hier; zie de README van de toolkit.",
+  "site": { "naam": "ElektrischKamperen.nl", "domein": "elektrischkamperen.nl" },
+  "taal": "nl-NL",
+  "land": "NL",
+  "contentMap": "content/gidsen",
+  "contentFormaat": "markdown-frontmatter",
+  "dataMap": "content/seo",
+  "envBestand": ".env.local",
+  "frontmatter": {
+    "rollen": {
+      "titel": "titel",
+      "slug": "slug",
+      "focusKeyword": "focus_keyword",
+      "seoTitel": "seo_titel",
+      "seoBeschrijving": "seo_beschrijving",
+      "land": "land",
+      "publicatiedatum": "gepubliceerd_op",
+      "doelgroep": "geschikt_voor"
+    },
+    "velden": {
+      "titel": { "verplicht": true, "type": "tekst" },
+      "slug": { "verplicht": true, "type": "tekst" },
+      "hook": { "verplicht": true, "type": "tekst" },
+      "seo_titel": { "verplicht": true, "type": "tekst" },
+      "seo_beschrijving": { "verplicht": true, "type": "tekst", "maxLengte": 160 },
+      "focus_keyword": { "verplicht": true, "type": "tekst" },
+      "land": {
+        "verplicht": true,
+        "type": "tekst",
+        "toegestaan": ["Nederland", "België", "Duitsland", "Frankrijk", "Italië", "Spanje", "Oostenrijk", "Zwitserland", "Kroatië", "Europa"]
+      },
+      "geschikt_voor": {
+        "verplicht": true,
+        "type": "lijst",
+        "toegestaan": ["Tesla", "Caravan", "Camper", "Gezin", "Koppel", "Solo"]
+      },
+      "gepubliceerd_op": { "verplicht": true, "type": "datum" }
+    }
+  },
+  "urlStructuur": {
+    "artikel": "/gidsen/{slug}",
+    "land": "/campings/{landSlug}",
+    "statischePaden": ["/", "/campings", "/routes", "/gidsen"],
+    "nextAppDir": "app",
+    "publiekeMap": "public",
+    "dynamisch": [
+      { "patroon": "/campings/{landSlug}/{slug}", "bron": "campings", "filterOpLand": true, "directive": "::camping{slug=\"{slug}\"}" },
+      { "patroon": "/routes/{slug}", "bron": "routes" }
+    ]
+  },
+  "paginas": [
+    { "pad": "/campings", "focus": "campings met laadpaal" },
+    { "pad": "/campings/{landSlug}", "focus": "campings met laadpaal {land}", "perLand": true }
+  ],
+  "landen": [
+    { "naam": "Nederland", "slug": "nederland", "varianten": ["nederlands", "nederlandse"] },
+    { "naam": "België", "slug": "belgie", "varianten": ["belgisch", "belgische"] },
+    { "naam": "Duitsland", "slug": "duitsland", "varianten": ["duits", "duitse"] },
+    { "naam": "Frankrijk", "slug": "frankrijk", "varianten": ["frans", "franse"] },
+    { "naam": "Italië", "slug": "italie", "varianten": ["italiaans", "italiaanse"] },
+    { "naam": "Spanje", "slug": "spanje", "varianten": ["spaans", "spaanse"] },
+    { "naam": "Oostenrijk", "slug": "oostenrijk", "varianten": ["oostenrijks", "oostenrijkse"] },
+    { "naam": "Zwitserland", "slug": "zwitserland", "varianten": ["zwitsers", "zwitserse"] },
+    { "naam": "Kroatië", "slug": "kroatie", "varianten": ["kroatisch", "kroatische"] }
+  ],
+  "themas": [
+    { "naam": "laden op de camping", "termen": ["laden camping", "laadpaal camping", "campingstroom", "cee", "laden standplaats"], "gewicht": 1 },
+    { "naam": "caravan en camper", "termen": ["caravan", "camper", "vouwwagen", "aanhanger"], "gewicht": 0.6 },
+    { "naam": "kamperen met een elektrische auto", "termen": ["kamperen elektrische auto", "elektrische auto vakantie", "elektrische auto kamperen"], "gewicht": 0.5 }
+  ],
+  "landGewicht": 0.4,
+  "score": {
+    "gewichten": { "volume": 35, "usp": 30, "commercieel": 20, "searchConsole": 15 },
+    "volumePlafond": 10000,
+    "dekking": { "gedekt": 0.2, "bijna": 0.6 }
+  },
+  "affiliateTermen": [
+    { "term": "laadpas", "gewicht": 1 },
+    { "term": "adapter", "gewicht": 1 },
+    { "term": "laadkabel", "gewicht": 1 },
+    { "term": "kabel", "gewicht": 0.8 },
+    { "term": "verlengkabel", "gewicht": 0.8 },
+    { "term": "mobiele lader", "gewicht": 1 },
+    { "term": "reislader", "gewicht": 1 },
+    { "term": "stekkerhouder", "gewicht": 0.6 },
+    { "term": "camping boeken", "gewicht": 1 },
+    { "term": "camping reserveren", "gewicht": 1 }
+  ],
+  "affiliate": { "linkSyntax": "[tekst](url \"affiliate\")", "disclaimerPad": "/affiliate-disclaimer" },
+  "zoekwoorden": {
+    "contextwoorden": ["elektrische auto", "elektrisch", "ev", "auto", "vakantie", "kamperen", "kampeervakantie"],
+    "synoniemen": {
+      "laadpunt": "laadpaal", "laadpunten": "laadpaal", "laadstation": "laadpaal", "laadstations": "laadpaal", "laadzuil": "laadpaal",
+      "laadkaart": "laadpas", "laadpassen": "laadpas", "snelladers": "snellader", "snelladen": "snellader",
+      "eauto": "elektrisch", "ev": "elektrisch", "evs": "elektrisch", "laadt": "laad"
+    },
+    "merken": [
+      "ANWB", "Ionity", "Fastned", "Allego", "Tesla", "TotalEnergies", "Electra", "Chargemap", "Shell Recharge", "Shell",
+      "Plugsurfing", "Izivia", "Freshmile", "ACSI", "ABRP", "A Better Routeplanner", "Vattenfall", "Eneco", "MTC"
+    ],
+    "uitsluiten": ["zubehör", "campingplatz", "geschäft", "öffnungszeiten", "wohnmobil", "stellplatz", "morteratsch", "wagner"]
+  },
+  "doelgroepRegels": [
+    { "waarde": "Caravan", "termen": ["caravan", "vouwwagen", "aanhanger"] },
+    { "waarde": "Camper", "termen": ["camper"] },
+    { "waarde": "Tesla", "termen": ["tesla", "supercharger"] },
+    { "waarde": "Gezin", "termen": ["gezin", "kinderen"] }
+  ],
+  "feiten": [
+    { "categorie": "Prijzen, tarieven en abonnementen (per kWh, starttarief, toeslag camping)", "signaalwoorden": ["kosten", "prijs", "tarief", "laadpas", "abonnement", "kwh", "camping"] },
+    { "categorie": "Laadnetwerken en waar ze werken (per land, roaming)", "signaalwoorden": ["netwerk", "snellader", "laadpas", "onderweg", "buitenland", "snelweg", "frankrijk", "duitsland", "belgie", "italie", "spanje", "oostenrijk", "zwitserland", "kroatie"] },
+    { "categorie": "Stekkertypen en aansluitingen (type 2, CCS, CEE, Schuko)", "signaalwoorden": ["adapter", "cee", "kabel", "stekker", "type 2", "schuko", "stopcontact", "campingstroom", "lader"] },
+    { "categorie": "Vermogen en laadsnelheid (kW, ampère)", "signaalwoorden": ["kw", "ampere", "laadsnelheid", "vermogen", "snellader", "campingstroom", "cee"] },
+    { "categorie": "Afstanden, bereik en verbruik", "signaalwoorden": ["route", "bereik", "actieradius", "afstand", "km", "caravan", "verbruik"] },
+    { "categorie": "Regels en wetgeving (bijv. AFIR, campingregels)", "signaalwoorden": ["afir", "regel", "toestemming", "verplicht", "wet"] },
+    { "categorie": "Laadinformatie van genoemde campings (aantal laders, vermogen, controledatum)", "signaalwoorden": ["camping", "campings", "laadpaal"] },
+    { "categorie": "Alle andere getallen, datums en namen in de tekst", "signaalwoorden": [], "altijd": true }
+  ],
+  "doellengte": {
+    "informatief": [1200, 2000],
+    "commercieel": [1500, 2500],
+    "transactioneel": [800, 1200],
+    "navigatie": [600, 1000]
+  },
+  "vasteLinks": [
+    { "pad": "/campings", "label": "overzicht van campings met laadpaal", "altijd": true },
+    { "pad": "/routes", "label": "routes met etappes en laadtips", "alsTermen": ["route", "reis", "onderweg", "snelweg"] }
+  ],
+  "lint": {
+    "bronnenKop": "Bronnen",
+    "minBronnen": 3,
+    "minWoorden": 800,
+    "maxGemZinslengte": 20,
+    "maxAlineaWoorden": 120,
+    "eersteWoorden": 100,
+    "directives": [
+      { "naam": "camping", "verplicht": ["slug"] },
+      { "naam": "checklist" }
+    ]
+  },
+  "cms": {
+    "type": "sanity",
+    "projectIdEnv": "NEXT_PUBLIC_SANITY_PROJECT_ID",
+    "datasetEnv": "NEXT_PUBLIC_SANITY_DATASET",
+    "tokenEnvs": ["SANITY_API_WRITE_TOKEN", "SANITY_API_READ_TOKEN"],
+    "vereistToken": true,
+    "apiVersie": "2025-01-01",
+    "queries": {
+      "campings": "*[_type == \"camping\" && defined(slug.current) && !(_id in path(\"drafts.**\"))]{ \"slug\": slug.current, naam, land }",
+      "routes": "*[_type == \"route\" && defined(slug.current) && !(_id in path(\"drafts.**\"))]{ \"slug\": slug.current, \"naam\": titel }"
+    }
+  },
+  "gsc": {
+    "serviceAccountEnv": "GSC_SERVICE_ACCOUNT_JSON",
+    "propertyEnv": "GSC_PROPERTY",
+    "dagen": 90,
+    "minVertoningen": 100,
+    "maxCtr": 0.02,
+    "positie": [8, 20]
+  },
+  "planning": { "weekdag": 2, "perMaand": 4 },
+  "commandos": {
+    "importDry": "npm run import:gids -- --dry",
+    "importEcht": "npm run import:gids"
+  }
+}
