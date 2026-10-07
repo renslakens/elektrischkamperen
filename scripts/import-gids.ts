@@ -6,6 +6,12 @@
  *   npm run import:gids -- content/gidsen/x.md        # één bestand importeren
  *   npm run import:gids                               # alle bestanden importeren
  *
+ * SEO-check: als seo-toolkit geïnstalleerd is (devDependency, zie seo.config.json),
+ * draait eerst `seo lint`. Een gids met seo-fouten wordt dan geweigerd, ook bij --dry.
+ *   --forceer        toch importeren ondanks seo-fouten (bewuste uitzondering)
+ *   --geen-netwerk   externe links niet controleren
+ * Zonder toolkit (bijv. op een andere machine) wordt de check overgeslagen met een melding.
+ *
  * Vereist in .env.local:
  *   NEXT_PUBLIC_SANITY_PROJECT_ID, NEXT_PUBLIC_SANITY_DATASET
  *   SANITY_API_WRITE_TOKEN   (Editor-token; alleen nodig zonder --dry)
@@ -23,7 +29,8 @@
  *   - Type 2 laadkabel
  *   - [Laadpas](https://affiliate.example "affiliate")
  */
-import { readdirSync, readFileSync } from 'node:fs'
+import { spawnSync } from 'node:child_process'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { basename, join, resolve } from 'node:path'
 import matter from 'gray-matter'
 import { marked, type Token, type Tokens } from 'marked'
@@ -37,6 +44,8 @@ const GELDIGE_GESCHIKT_VOOR = ['Tesla', 'Caravan', 'Camper', 'Gezin', 'Koppel', 
 const args = process.argv.slice(2)
 const dry = args.includes('--dry')
 const print = args.includes('--print')
+const forceer = args.includes('--forceer')
+const geenNetwerk = args.includes('--geen-netwerk')
 const bestanden = args.filter((a) => !a.startsWith('--'))
 
 // ── Portable Text types (minimaal) ────────────────────────────────────────────
@@ -244,6 +253,26 @@ function valideerFrontmatter(fm: Record<string, unknown>, bestand: string): stri
     return fouten.map((f) => `${basename(bestand)}: ${f}`)
 }
 
+// ── SEO-lint (optioneel, via seo-toolkit) ─────────────────────────────────────
+type LintUitslag = { pad: string; fouten: number; bevindingen: { ernst: string; regel: number; bericht: string }[] }
+
+/** Seo-fouten per absoluut pad, of null als de toolkit niet beschikbaar is. */
+function seoLint(paden: string[]): Map<string, LintUitslag> | null {
+    const bin = resolve(process.cwd(), 'node_modules/seo-toolkit/bin/seo.js')
+    if (!existsSync(bin)) {
+        console.warn('⚠ seo-toolkit niet geïnstalleerd: seo-lint overgeslagen')
+        return null
+    }
+    const r = spawnSync(process.execPath, [bin, 'lint', '--json', ...(geenNetwerk ? ['--geen-netwerk'] : []), ...paden], { encoding: 'utf8' })
+    let uitslag: LintUitslag[]
+    try {
+        uitslag = JSON.parse(r.stdout) as LintUitslag[]
+    } catch {
+        throw new Error(`seo lint gaf geen geldige uitvoer:\n${r.stderr || r.stdout}`)
+    }
+    return new Map(uitslag.map((u) => [resolve(process.cwd(), u.pad), u]))
+}
+
 // ── Main ──────────────────────────────────────────────────────────────────────
 async function main() {
     const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
@@ -271,6 +300,8 @@ async function main() {
         console.log(`Geen .md bestanden gevonden in ${CONTENT_DIR}`)
         return
     }
+
+    const lint = seoLint(paden)
 
     const cache = new Map<string, string | null>()
     const zoekCamping = async (slug: string) => {
@@ -319,6 +350,16 @@ async function main() {
             console.error('  ✗ overgeslagen wegens fouten in frontmatter')
             fout = true
             continue
+        }
+        const seo = lint?.get(pad)
+        if (seo?.fouten) {
+            for (const b of seo.bevindingen.filter((x) => x.ernst === 'fout')) console.error(`  ✗ seo, regel ${b.regel}: ${b.bericht}`)
+            if (!forceer) {
+                console.error(`  ✗ geweigerd: ${seo.fouten} seo-fout(en) (zie npm run seo:lint, of importeer bewust met --forceer)`)
+                fout = true
+                continue
+            }
+            console.warn('  ⚠ --forceer: doorgelaten ondanks seo-fouten')
         }
         if (dry) {
             if (print) console.log(JSON.stringify(doc, null, 2))
