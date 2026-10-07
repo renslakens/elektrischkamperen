@@ -161,7 +161,7 @@
   },
   "planning": { "weekdag": 2, "perMaand": 4 },
   "commandos": {
-    "importDry": "npm run import:gids -- --dry",
-    "importEcht": "npm run import:gids"
+    "importDry": "npm run import:gids -- --dry <bestanden>",
+    "importEcht": "npm run import:gids -- <bestanden>"
   }
 }
